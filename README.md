@@ -3,12 +3,8 @@
 [![Project Status: Complete](https://img.shields.io/badge/Project%20Status-Complete%20%26%20Validated-brightgreen.svg)](#)
 [![Python Version](https://img.shields.io/badge/Python-3.11%20%7C%203.13-blue.svg)](#)
 [![Database](https://img.shields.io/badge/Database-SQLite%203-navy.svg)](#)
-[![Submission Document](https://img.shields.io/badge/Submission-29--Page%20Verified%20PDF-red.svg)](reports/DATA_VORTEX_PHASE2_SUBMISSION.pdf)
 
 Official competition repository for **Data Vortex Round 1**, encompassing both **Phase 1** (Forensic Corruption Audit, Programmatic Data Cleaning, and Exploratory Data Analysis) and **Phase 2** (Relational Database Architecture, SQLite Schema Implementation, and 10 Advanced Analytical SQL Challenges).
-
-The official final deliverable is the 29-page verified submission report:  
-📄 **[DATA_VORTEX_PHASE2_SUBMISSION.pdf](reports/DATA_VORTEX_PHASE2_SUBMISSION.pdf)**
 
 ---
 
@@ -219,15 +215,6 @@ python -c "import sqlite3; conn=sqlite3.connect('data/data_vortex.db'); print(co
 ```
 
 ---
-
-## Official Deliverables & Submission Links
-
-- 📑 **[DATA_VORTEX_PHASE2_SUBMISSION.pdf](reports/DATA_VORTEX_PHASE2_SUBMISSION.pdf)**: Official 29-page final competition submission PDF.
-- 📋 **[PHASE2_FINAL_REPORT.md](reports/PHASE2_FINAL_REPORT.md)**: Full markdown submission report with complete SQL queries and result tables.
-- ✅ **[PHASE2_SUBMISSION_CHECKLIST.md](reports/PHASE2_SUBMISSION_CHECKLIST.md)**: Official verification checklist verifying 100% compliance.
-- 🔬 **[FINAL_PHASE1_QA.md](reports/FINAL_PHASE1_QA.md)**: Final Phase 1 audit and data quality sign-off.
-- 📊 **[EDA_Report.md](reports/EDA_Report.md)**: Exploratory data analysis report with statistical distributions.
-- 🗄️ **[sql/README.md](sql/README.md)**: Detailed schema breakdown, indexing rationale, and challenge query directory.
 
 ---
 
