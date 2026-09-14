@@ -1,18 +1,18 @@
 # Challenge 5 — Monthly Publishing Volume & Trends
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 05 — Monthly Publishing Volume & Trends  
-**Database File:** `data/data_vortex.db`  
-**Target Table:** `posts`  
-**Difficulty:** Medium  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 05 — Monthly Publishing Volume & Trends
+**Database File:** `data/data_vortex.db`
+**Target Table:** `posts`
+**Difficulty:** Medium
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED**
 
 ---
 
 ## 1. Objective
 
-The objective of Challenge 5 is to analyze historical post publishing volume across calendar months using the `timestamp` attribute in the `posts` table. 
+The objective of Challenge 5 is to analyze historical post publishing volume across calendar months using the `timestamp` attribute in the `posts` table.
 
 Specific requirements:
 1. Aggregate post volume by calendar month formatted as `YYYY-MM`.
@@ -33,27 +33,27 @@ The query utilizes SQLite date/time functions and window functions:
 - **`ROUND(100.0 * (monthly_post_count - LAG(...)) / LAG(...), 2)`**: Computes relative MoM percentage change (evaluates to `NULL` for the initial month).
 - **`SUM(monthly_post_count) OVER (ORDER BY month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)`**: Computes the running cumulative post volume.
 
-All queries are maintained in [`sql/challenge_05_monthly_publishing_trends.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_05_monthly_publishing_trends.sql).
+All queries are maintained in [`sql/challenge_05_monthly_publishing_trends.sql`](../sql/challenge_05_monthly_publishing_trends.sql).
 
 ```sql
 WITH monthly_aggregation AS (
-    SELECT 
+    SELECT
         strftime('%Y-%m', timestamp) AS month,
         COUNT(post_id) AS monthly_post_count
     FROM posts
     GROUP BY strftime('%Y-%m', timestamp)
 )
-SELECT 
+SELECT
     month,
     monthly_post_count,
     monthly_post_count - LAG(monthly_post_count) OVER (ORDER BY month) AS month_over_month_change,
     ROUND(
-        100.0 * (monthly_post_count - LAG(monthly_post_count) OVER (ORDER BY month)) 
-        / LAG(monthly_post_count) OVER (ORDER BY month), 
+        100.0 * (monthly_post_count - LAG(monthly_post_count) OVER (ORDER BY month))
+        / LAG(monthly_post_count) OVER (ORDER BY month),
         2
     ) AS month_over_month_change_pct,
     SUM(monthly_post_count) OVER (
-        ORDER BY month 
+        ORDER BY month
         ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
     ) AS cumulative_post_count
 FROM monthly_aggregation

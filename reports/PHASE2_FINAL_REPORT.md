@@ -1,11 +1,11 @@
 # Data Vortex — Round 1 Phase 2
 ## SQL Analytics Final Report
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Deliverable:** Comprehensive SQL Analytics Final Report  
-**Database File:** `data/data_vortex.db` (SQLite 3)  
-**Date:** 2026-09-14  
-**Status:** **COMPLETE & SUBMISSION-READY**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Deliverable:** Comprehensive SQL Analytics Final Report
+**Database File:** `data/data_vortex.db` (SQLite 3)
+**Date:** 2026-09-14
+**Status:** **COMPLETE & SUBMISSION-READY**
 
 ---
 
@@ -37,16 +37,16 @@ All 10 challenges were solved using pure analytical `SELECT` statements, documen
 
 | Challenge | Analysis | Main SQL Technique | SQL File | Report | Notebook |
 | :---: | :--- | :--- | :--- | :--- | :--- |
-| **1** | Platform Interaction Benchmarks | `GROUP BY`, `AVG()`, `COALESCE` | [`challenge_01_platform_interaction_benchmarks.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_01_platform_interaction_benchmarks.sql) | [`09_challenge_01.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/09_challenge_01.md) | [`08_challenge_01.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/08_challenge_01.ipynb) |
-| **2** | Top Creator Audience Leaderboard | `INNER JOIN`, `GROUP BY`, `ORDER BY` | [`challenge_02_top_creator_audience.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_02_top_creator_audience.sql) | [`10_challenge_02.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/10_challenge_02.md) | [`09_challenge_02.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/09_challenge_02.ipynb) |
-| **3** | Geographic Representation | `CASE`, string parsing (`INSTR`, `SUBSTR`), `GROUP BY` | [`challenge_03_geographic_analysis.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_03_geographic_analysis.sql) | [`11_challenge_03.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/11_challenge_03.md) | [`10_challenge_03.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/10_challenge_03.ipynb) |
-| **4** | Creator Activity Segmentation | CTE, `CASE WHEN`, aggregation | [`challenge_04_creator_activity_segmentation.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_04_creator_activity_segmentation.sql) | [`12_challenge_04.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/12_challenge_04.md) | [`11_challenge_04.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/11_challenge_04.ipynb) |
-| **5** | Monthly Publishing Trends | `strftime()`, `LAG()`, `SUM() OVER()` | [`challenge_05_monthly_publishing_trends.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_05_monthly_publishing_trends.sql) | [`13_challenge_05.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/13_challenge_05.md) | [`12_challenge_05.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/12_challenge_05.ipynb) |
-| **6** | Day-of-Week Cadence | `strftime('%u')`, `CASE`, `GROUP BY` | [`challenge_06_day_of_week_cadence.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_06_day_of_week_cadence.sql) | [`14_challenge_06.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/14_challenge_06.md) | [`13_challenge_06.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/13_challenge_06.ipynb) |
-| **7** | Audience Reach vs Engagement | `JOIN`, aggregation, manual Pearson correlation formula | [`challenge_07_audience_reach_vs_engagement.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_07_audience_reach_vs_engagement.sql) | [`15_challenge_07.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/15_challenge_07.md) | [`14_challenge_07.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/14_challenge_07.ipynb) |
-| **8** | High-Impact Post Leaderboard | `COALESCE`, `ROW_NUMBER() OVER()` | [`challenge_08_high_impact_post_leaderboard.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_08_high_impact_post_leaderboard.sql) | [`16_challenge_08.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/16_challenge_08.md) | [`15_challenge_08.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/15_challenge_08.ipynb) |
-| **9** | Regional Creator Leadership | `DENSE_RANK()`, `PARTITION BY` | [`challenge_09_regional_creator_leadership.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_09_regional_creator_leadership.sql) | [`17_challenge_09.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/17_challenge_09.md) | [`16_challenge_09.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/16_challenge_09.ipynb) |
-| **10** | MoM Growth & Cumulative Tracking | `LAG()`, windowed `SUM() OVER()` | [`challenge_10_mom_volume_growth.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_10_mom_volume_growth.sql) | [`18_challenge_10.md`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/18_challenge_10.md) | [`17_challenge_10.ipynb`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/17_challenge_10.ipynb) |
+| **1** | Platform Interaction Benchmarks | `GROUP BY`, `AVG()`, `COALESCE` | [`challenge_01_platform_interaction_benchmarks.sql`](../sql/challenge_01_platform_interaction_benchmarks.sql) | [`09_challenge_01.md`](../reports/09_challenge_01.md) | [`08_challenge_01.ipynb`](../notebooks/08_challenge_01.ipynb) |
+| **2** | Top Creator Audience Leaderboard | `INNER JOIN`, `GROUP BY`, `ORDER BY` | [`challenge_02_top_creator_audience.sql`](../sql/challenge_02_top_creator_audience.sql) | [`10_challenge_02.md`](../reports/10_challenge_02.md) | [`09_challenge_02.ipynb`](../notebooks/09_challenge_02.ipynb) |
+| **3** | Geographic Representation | `CASE`, string parsing (`INSTR`, `SUBSTR`), `GROUP BY` | [`challenge_03_geographic_analysis.sql`](../sql/challenge_03_geographic_analysis.sql) | [`11_challenge_03.md`](../reports/11_challenge_03.md) | [`10_challenge_03.ipynb`](../notebooks/10_challenge_03.ipynb) |
+| **4** | Creator Activity Segmentation | CTE, `CASE WHEN`, aggregation | [`challenge_04_creator_activity_segmentation.sql`](../sql/challenge_04_creator_activity_segmentation.sql) | [`12_challenge_04.md`](../reports/12_challenge_04.md) | [`11_challenge_04.ipynb`](../notebooks/11_challenge_04.ipynb) |
+| **5** | Monthly Publishing Trends | `strftime()`, `LAG()`, `SUM() OVER()` | [`challenge_05_monthly_publishing_trends.sql`](../sql/challenge_05_monthly_publishing_trends.sql) | [`13_challenge_05.md`](../reports/13_challenge_05.md) | [`12_challenge_05.ipynb`](../notebooks/12_challenge_05.ipynb) |
+| **6** | Day-of-Week Cadence | `strftime('%u')`, `CASE`, `GROUP BY` | [`challenge_06_day_of_week_cadence.sql`](../sql/challenge_06_day_of_week_cadence.sql) | [`14_challenge_06.md`](../reports/14_challenge_06.md) | [`13_challenge_06.ipynb`](../notebooks/13_challenge_06.ipynb) |
+| **7** | Audience Reach vs Engagement | `JOIN`, aggregation, manual Pearson correlation formula | [`challenge_07_audience_reach_vs_engagement.sql`](../sql/challenge_07_audience_reach_vs_engagement.sql) | [`15_challenge_07.md`](../reports/15_challenge_07.md) | [`14_challenge_07.ipynb`](../notebooks/14_challenge_07.ipynb) |
+| **8** | High-Impact Post Leaderboard | `COALESCE`, `ROW_NUMBER() OVER()` | [`challenge_08_high_impact_post_leaderboard.sql`](../sql/challenge_08_high_impact_post_leaderboard.sql) | [`16_challenge_08.md`](../reports/16_challenge_08.md) | [`15_challenge_08.ipynb`](../notebooks/15_challenge_08.ipynb) |
+| **9** | Regional Creator Leadership | `DENSE_RANK()`, `PARTITION BY` | [`challenge_09_regional_creator_leadership.sql`](../sql/challenge_09_regional_creator_leadership.sql) | [`17_challenge_09.md`](../reports/17_challenge_09.md) | [`16_challenge_09.ipynb`](../notebooks/16_challenge_09.ipynb) |
+| **10** | MoM Growth & Cumulative Tracking | `LAG()`, windowed `SUM() OVER()` | [`challenge_10_mom_volume_growth.sql`](../sql/challenge_10_mom_volume_growth.sql) | [`18_challenge_10.md`](../reports/18_challenge_10.md) | [`17_challenge_10.ipynb`](../notebooks/17_challenge_10.ipynb) |
 
 ---
 
@@ -111,6 +111,6 @@ All 10 challenges underwent rigorous automated cross-validation:
 
 ### 8. Conclusion
 
-Data Vortex Round 1 Phase 2 successfully converted cleaned flat CSV records into an enterprise-grade, relational SQLite analytical database. Across 10 systematically engineered SQL challenges, the project demonstrated advanced relational modeling, window function partitioning, longitudinal tracking, and rigorous non-causal interpretation. 
+Data Vortex Round 1 Phase 2 successfully converted cleaned flat CSV records into an enterprise-grade, relational SQLite analytical database. Across 10 systematically engineered SQL challenges, the project demonstrated advanced relational modeling, window function partitioning, longitudinal tracking, and rigorous non-causal interpretation.
 
 Every challenge deliverable—comprising pure SQL files, thorough markdown documentation, and automated validation notebooks—is fully verified, deterministic, and competition-ready.

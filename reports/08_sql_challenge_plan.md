@@ -1,12 +1,12 @@
 # Phase 2 Analytical SQL Challenge Plan
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Database File:** `data/data_vortex.db`  
-**Database Engine:** SQLite 3  
-**Tables:** `users` (1,500 records), `posts` (12,000 records)  
-**Document Version:** 1.0  
-**Date:** 2026-09-14  
-**Status:** **PLANNING ONLY (No Solutions Executed)**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Database File:** `data/data_vortex.db`
+**Database Engine:** SQLite 3
+**Tables:** `users` (1,500 records), `posts` (12,000 records)
+**Document Version:** 1.0
+**Date:** 2026-09-14
+**Status:** **PLANNING ONLY (No Solutions Executed)**
 
 ---
 
@@ -16,7 +16,7 @@ Phase 2 of the Data Vortex competition transitions from dataset inspection, clea
 
 ### Mandatory Rules & Constraints:
 1. **Single Source of Truth:** All queries must execute exclusively against the verified SQLite database at `data/data_vortex.db`.
-2. **Strict Immutability:** 
+2. **Strict Immutability:**
    - Zero modification to `data/raw/` or `data/cleaned/` CSV files.
    - Zero alteration to the relational tables, schemas, or existing data in `data/data_vortex.db`.
    - Analytical queries must be read-only (`SELECT`).
@@ -192,7 +192,7 @@ To successfully deliver Phase 2 of Data Vortex Round 1, the following deliverabl
 1. **SQL Solution Scripts:**
    - Dedicated, well-commented SQL files under `sql/` (e.g., `sql/03_analytical_queries.sql`).
 2. **Interactive Jupyter Notebook:**
-   - [`notebooks/08_analytical_sql.ipynb`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/08_analytical_sql.ipynb) executing each query against `data/data_vortex.db` with rendered Pandas dataframes.
+   - [`notebooks/08_challenge_01.ipynb`](../notebooks/08_challenge_01.ipynb) executing each query against `data/data_vortex.db` with rendered Pandas dataframes.
 3. **Comprehensive Analytical Report:**
    - `reports/08_sql_analytics_report.md` detailing the business question, query syntax, tabular output, and analytical interpretation for all 10 challenges.
 4. **Execution Evidence & Screenshots:**

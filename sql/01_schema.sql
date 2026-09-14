@@ -20,7 +20,7 @@ CREATE TABLE users (
     location         TEXT NOT NULL,
     language         TEXT NOT NULL,
     account_created  TEXT NOT NULL,
-    follower_count   INTEGER NOT NULL
+    follower_count   INTEGER NOT NULL CHECK (follower_count >= 0)
 );
 
 -- ====================================================================
@@ -35,9 +35,9 @@ CREATE TABLE posts (
     platform      TEXT,
     text_content  TEXT,
     timestamp     TEXT NOT NULL,
-    likes         INTEGER,
-    shares        INTEGER NOT NULL,
-    comments      INTEGER NOT NULL,
+    likes         INTEGER CHECK (likes IS NULL OR likes >= 0),
+    shares        INTEGER NOT NULL CHECK (shares >= 0),
+    comments      INTEGER NOT NULL CHECK (comments >= 0),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT

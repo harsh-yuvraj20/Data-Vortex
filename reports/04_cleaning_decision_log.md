@@ -1,11 +1,11 @@
 # Data Cleaning Decision Log
 
-**Competition:** Data Vortex - Round 1  
-**Datasets:**  
-- `data/raw/Social_Engine_Users.csv` $\rightarrow$ `data/cleaned/Social_Engine_Users_Cleaned.csv`  
-- `data/raw/Social_Engine_Posts_Corrupted.csv` $\rightarrow$ `data/cleaned/Social_Engine_Posts_Cleaned.csv`  
-**Date:** 2026-09-14  
-**Pipeline Script:** [src/clean_data.py](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/src/clean_data.py)  
+**Competition:** Data Vortex - Round 1
+**Datasets:**
+- `data/raw/Social_Engine_Users.csv` $\rightarrow$ `data/cleaned/Social_Engine_Users_Cleaned.csv`
+- `data/raw/Social_Engine_Posts_Corrupted.csv` $\rightarrow$ `data/cleaned/Social_Engine_Posts_Cleaned.csv`
+**Date:** 2026-09-14
+**Pipeline Script:** [src/clean_data.py](../src/clean_data.py)
 
 ---
 

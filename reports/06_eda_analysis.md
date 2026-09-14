@@ -1,11 +1,11 @@
 # Phase 1: Exploratory Data Analysis (EDA) Report
 
-**Competition:** Data Vortex - Round 1  
-**Execution Date:** 2026-09-14  
-**Source Cleaned Datasets:**  
-- [data/cleaned/Social_Engine_Users_Cleaned.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/cleaned/Social_Engine_Users_Cleaned.csv) (1,500 rows)  
-- [data/cleaned/Social_Engine_Posts_Cleaned.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/cleaned/Social_Engine_Posts_Cleaned.csv) (12,000 rows)  
-**Notebook Reference:** [notebooks/05_eda_analysis.ipynb](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/05_eda_analysis.ipynb)  
+**Competition:** Data Vortex - Round 1
+**Execution Date:** 2026-09-14
+**Source Cleaned Datasets:**
+- [data/cleaned/Social_Engine_Users_Cleaned.csv](../data/cleaned/Social_Engine_Users_Cleaned.csv) (1,500 rows)
+- [data/cleaned/Social_Engine_Posts_Cleaned.csv](../data/cleaned/Social_Engine_Posts_Cleaned.csv) (12,000 rows)
+**Notebook Reference:** [notebooks/05_eda_analysis.ipynb](../notebooks/05_eda_analysis.ipynb)
 
 ---
 

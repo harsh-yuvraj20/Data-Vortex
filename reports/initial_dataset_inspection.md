@@ -1,15 +1,15 @@
 # Initial Dataset Inspection & Audit Report
 
-**Competition:** Data Vortex - Round 1  
-**Target File:** `data/raw/Social_Engine_Users.csv`  
-**Date of Audit:** 2026-09-14  
+**Competition:** Data Vortex - Round 1
+**Target File:** `data/raw/Social_Engine_Users.csv`
+**Date of Audit:** 2026-09-14
 **Audit Status:** Completed — Read-Only Inspection (No data modified)
 
 ---
 
 ## 1. Dataset Overview
 
-An initial audit was performed on the raw competition dataset located at [data/raw/Social_Engine_Users.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/raw/Social_Engine_Users.csv). The file was inspected directly using Python 3 and pandas without altering, moving, or overwriting the original file.
+An initial audit was performed on the raw competition dataset located at [data/raw/Social_Engine_Users.csv](../data/raw/Social_Engine_Users.csv). The file was inspected directly using Python 3 and pandas without altering, moving, or overwriting the original file.
 
 | Parameter | Observed Value | Notes |
 | :--- | :--- | :--- |
@@ -219,6 +219,6 @@ The dataset comprises 5 columns. All text and date columns are initially loaded 
 
 ## 11. Artifact Deliverables Summary
 
-1. **Inspection Report:** [reports/initial_dataset_inspection.md](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/initial_dataset_inspection.md)
-2. **Jupyter Inspection Notebook:** [notebooks/01_initial_dataset_inspection.ipynb](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/01_initial_dataset_inspection.ipynb)
-3. **Machine-Readable Summary:** [outputs/initial_inspection_summary.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/initial_inspection_summary.csv)
+1. **Inspection Report:** [reports/initial_dataset_inspection.md](../reports/initial_dataset_inspection.md)
+2. **Jupyter Inspection Notebook:** [notebooks/01_initial_dataset_inspection.ipynb](../notebooks/01_initial_dataset_inspection.ipynb)
+3. **Machine-Readable Summary:** [outputs/initial_inspection_summary.csv](../outputs/initial_inspection_summary.csv)

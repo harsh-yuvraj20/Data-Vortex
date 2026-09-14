@@ -1,17 +1,17 @@
 # Data Vortex — Exploratory Data Analysis Report
 
-**Competition:** Data Vortex — Round 1  
-**Target Datasets:**  
-- `data/cleaned/Social_Engine_Users_Cleaned.csv` (1,500 records)  
-- `data/cleaned/Social_Engine_Posts_Cleaned.csv` (12,000 records)  
-**Document Version:** 1.0 (Final Comprehensive EDA Specification)  
-**Date:** 2026-09-14  
+**Competition:** Data Vortex — Round 1
+**Target Datasets:**
+- `data/cleaned/Social_Engine_Users_Cleaned.csv` (1,500 records)
+- `data/cleaned/Social_Engine_Posts_Cleaned.csv` (12,000 records)
+**Document Version:** 1.0 (Final Comprehensive EDA Specification)
+**Date:** 2026-09-14
 
 ---
 
 ## 1. Executive Summary
 
-This report delivers the definitive Exploratory Data Analysis (EDA) for the cleaned datasets of **Data Vortex Round 1**, encompassing 1,500 verified user profiles and 12,000 deduplicated social media posts published between May 1, 2024, and April 30, 2025. 
+This report delivers the definitive Exploratory Data Analysis (EDA) for the cleaned datasets of **Data Vortex Round 1**, encompassing 1,500 verified user profiles and 12,000 deduplicated social media posts published between May 1, 2024, and April 30, 2025.
 
 The analysis was executed under strict governance protocols: no imputation was performed on missing fields, no data were fabricated, raw and cleaned CSV files remained strictly untouched, and all relationships were characterized using descriptive, evidence-based language.
 
@@ -53,7 +53,7 @@ The users dataset comprises 1,500 accounts distributed across 33 global metropol
 
 User counts per location range from 31 (Denver, USA and Nairobi, Kenya) to 60 (San Jose, USA), with a theoretical expectation of $1,500 / 33 \approx 45.45$ users per city. The dispersion exhibits an approximately uniform spread across international metropolitan centers.
 
-![User Geographic Representation](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/09_user_locations.png)
+![User Geographic Representation](../outputs/figures/09_user_locations.png)
 *Figure 3.1: Geographic distribution of 1,500 registered user accounts across 33 international metropolitan centers.*
 
 ### 3.2 Language Distribution
@@ -74,7 +74,7 @@ User accounts are classified under 10 primary language codes representing major 
 | `pt` | Portuguese | 135 | 9.00% |
 | `de` | German | 133 | 8.87% |
 
-![Language Distribution](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/10_language_distribution.png)
+![Language Distribution](../outputs/figures/10_language_distribution.png)
 *Figure 3.2: User representation by ISO 639-1 language code, indicating balanced demographic generation.*
 
 #### Location vs. Language Independence Test:
@@ -86,7 +86,7 @@ A cross-tabulation of the 33 locations against the 10 languages produces a $33 \
 Because $p > 0.05$, we fail to reject the null hypothesis of independence. This result is consistent with statistical independence between user language and geographical location in this dataset (e.g., German speakers are not concentrated in Berlin, nor are Japanese speakers concentrated in Tokyo).
 
 ### 3.3 Follower Distribution
-The `follower_count` attribute spans from a minimum of 109 to a maximum of 49,944 followers. 
+The `follower_count` attribute spans from a minimum of 109 to a maximum of 49,944 followers.
 
 ### Table 3.2: Follower Count Parametric & Non-Parametric Summary
 
@@ -102,7 +102,7 @@ The `follower_count` attribute spans from a minimum of 109 to a maximum of 49,94
 | **Skewness ($\gamma_1$)** | +0.0156 | 0.0000 |
 | **Excess Kurtosis ($\gamma_2$)** | -1.1904 | -1.2000 |
 
-![Follower Count Distribution](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/01_follower_count_distribution.png)
+![Follower Count Distribution](../outputs/figures/01_follower_count_distribution.png)
 *Figure 3.3: Empirical distribution of user follower counts compared against theoretical uniform characteristics.*
 
 The close match between the empirical excess kurtosis ($-1.1904$) and the theoretical uniform value ($-1.2000$), alongside the near-zero skewness ($+0.0156$), shows that follower counts exhibit characteristics consistent with a continuous uniform distribution rather than an empirical social graph distribution.
@@ -132,7 +132,7 @@ The 12,000 posts are partitioned across five social media platforms, in addition
 | *Missing (`NaN`)* | 1,784 | 14.87% | — |
 | **Total** | **12,000** | **100.00%** | **100.00%** |
 
-![Platform Post Volume](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/03_platform_post_volume.png)
+![Platform Post Volume](../outputs/figures/03_platform_post_volume.png)
 *Figure 4.1: Post volume across identified platforms and explicit missing categories.*
 
 When excluding missing records, the remaining 10,216 posts are distributed almost evenly across the five platforms ($\approx 20.0\%$ each; variance $< 0.05\%$).
@@ -140,7 +140,7 @@ When excluding missing records, the remaining 10,216 posts are distributed almos
 ### 4.2 Temporal Activity & Timestamp Provenance
 Post publishing occurred continuously across a 365-day observation window from May 1, 2024 to April 30, 2025.
 
-![Monthly Post Activity](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/04_monthly_post_activity.png)
+![Monthly Post Activity](../outputs/figures/04_monthly_post_activity.png)
 *Figure 4.2: Monthly post publishing volume over the 12-month observation window (May 2024 – April 2025).*
 
 Monthly post counts remain steady throughout the year (mean: 1,000.0 posts/month; standard deviation: 37.1 posts), ranging from 934 in February 2025 (28 days) to 1,061 in August 2024 (31 days). Daily publication rates average $32.88 \pm 5.4$ posts per day.
@@ -167,7 +167,7 @@ The discrepancy is fully explained: exactly 96 rows among the 360 removed exact 
 ### 4.3 Posts per User
 Every user in the 1,500-user population published at least one post. The number of posts per user ranges from 1 to 22, with a mean of 8.00 and a median of 8.00.
 
-![Posts per User Distribution](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/05_posts_per_user.png)
+![Posts per User Distribution](../outputs/figures/05_posts_per_user.png)
 *Figure 4.3: Frequency distribution of posts authored per user account (N = 1,500 users).*
 
 The distribution follows a symmetric, unimodal bell-shaped curve that matches a Poisson distribution with parameter $\lambda = 8.0$ (variance $= 7.94 \approx \lambda$). There are no dominant "power users" (the most active user contributed only 22 posts, or 0.18% of total volume).
@@ -187,7 +187,7 @@ Following the sign-flip rectification of negative values in Phase 1 cleaning, th
 | **Shares** | 12,000 | 0.00% | 0 | 507.0 | 1,018.0 | 1,007.17 | 1,508.0 | 2,000 | 579.52 | -0.0163 | -1.1916 |
 | **Comments** | 12,000 | 0.00% | 0 | 252.0 | 503.0 | 504.35 | 754.0 | 1,000 | 289.47 | -0.0152 | -1.2110 |
 
-![Engagement Distributions](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/02_engagement_distributions.png)
+![Engagement Distributions](../outputs/figures/02_engagement_distributions.png)
 *Figure 5.1: Comparative frequency distributions for likes, shares, and comments across all posts.*
 
 The `likes` distribution is bounded in $[0, 5000]$, with empirical mean ($2,490.87$) and median ($2,497.00$) closely matching the theoretical midpoint of $2,500.00$.
@@ -212,7 +212,7 @@ To evaluate whether engagement differs by platform, medians and non-missing obse
 | **YouTube** | 2,042 | 1,739 | 2,509.0 | 2,042 | 1,015.5 | 2,042 | 496.0 |
 | **[Missing]** | 1,784 | 1,485 | 2,518.5 | 1,784 | 1,027.0 | 1,784 | 496.0 |
 
-![Platform Engagement Comparison](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/06_platform_engagement.png)
+![Platform Engagement Comparison](../outputs/figures/06_platform_engagement.png)
 *Figure 5.2: Median engagement metric comparison across social platforms.*
 
 #### Formal Hypothesis Tests (Kruskal-Wallis):
@@ -238,7 +238,7 @@ In organic social networks, accounts with larger follower bases typically accumu
 | **Followers vs. Shares** | 12,000 | -0.0144 | 0.1139 | -0.0144 | 0.1147 | Statistically independent ($p > 0.05$) |
 | **Followers vs. Comments** | 12,000 | -0.0003 | 0.9750 | +0.0003 | 0.9758 | Statistically independent ($p > 0.05$) |
 
-![Followers vs Likes Scatterplot](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/07_followers_vs_likes.png)
+![Followers vs Likes Scatterplot](../outputs/figures/07_followers_vs_likes.png)
 *Figure 6.1: User follower count plotted against post likes (Pairwise n = 10,186), demonstrating absence of association.*
 
 The linear regression slope between follower count and likes is negligible ($m = 0.0008, R^2 = 0.00007$). Accounts in the lowest quartile of followers ($< 12,500$) achieve comparable median likes ($2,504$) to accounts in the highest quartile ($> 37,500$ followers; median: $2,492$). Engagement is completely decoupled from audience size.
@@ -254,7 +254,7 @@ To evaluate whether high likes coincide with high shares or comments on individu
 | **Likes vs. Comments** | 10,186 | +0.0100 | 0.3122 | +0.0103 | 0.3005 | Statistically independent |
 | **Shares vs. Comments** | 12,000 | +0.0244 | 0.0075 | +0.0238 | 0.0091 | Statistically significant but practically negligible ($r^2 < 0.0006$) |
 
-![Correlation Heatmap](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/08_correlation_heatmap.png)
+![Correlation Heatmap](../outputs/figures/08_correlation_heatmap.png)
 *Figure 6.2: Pearson correlation matrix across engagement metrics and user follower counts.*
 
 While the shares-to-comments correlation reaches formal statistical significance due to the large sample size ($n = 12,000, p = 0.0075$), the effect size ($r = 0.0244$) explains less than $0.06\%$ of shared variance. In practical terms, all three engagement metrics operate as independent random variables.
@@ -275,7 +275,7 @@ Among the 10,289 available text records, string length ranges from 5 to 172 char
 ### 7.3 Hashtags
 Regex extraction (`r'#(\w+)'`) identified 56 distinct hashtags across the 10,289 non-missing texts, accounting for 20,531 total hashtag tokens. Every post with text contains between 1 and 4 hashtags (mean: 2.00 tags/post).
 
-![Top 15 Hashtags](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/12_top_hashtags.png)
+![Top 15 Hashtags](../outputs/figures/12_top_hashtags.png)
 *Figure 7.1: Occurrence frequency of the 15 most frequent hashtags in non-missing text content.*
 
 The 15 most frequent hashtags are summarized in Table 7.1.
@@ -330,7 +330,7 @@ Cross-attribute missingness evaluation reveals:
 
 The observed multi-column missingness rate (40 posts) closely matches the expected rate under joint independence ($0.1487 \times 0.1426 \times 0.1512 \times 12,000 \approx 38.47$ posts).
 
-![Missingness Over Time](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/11_missingness_over_time.png)
+![Missingness Over Time](../outputs/figures/11_missingness_over_time.png)
 *Figure 8.1: Monthly missingness rates for platform, text_content, and likes across the 12-month period.*
 
 ### 8.2 Evaluation of Missingness Mechanism
@@ -456,6 +456,6 @@ The Phase 1 Exploratory Data Analysis demonstrates that the cleaned datasets:
 - Contain **reconciled temporal records**, including 3,526 verified records from `DD-MM-YYYY` formats.
 - Exhibit **statistically independent engagement metrics** and demographic assignments.
 
-The accompanying Jupyter notebook [`notebooks/06_final_eda.ipynb`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/06_final_eda.ipynb) provides fully reproducible code for all statistics and the 12 generated figures in [`outputs/figures/`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/). The metadata dictionary [`reports/EDA_Data_Dictionary.md`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/EDA_Data_Dictionary.md) documents all variable definitions and analytical handling.
+The accompanying Jupyter notebook [`notebooks/06_final_eda.ipynb`](../notebooks/06_final_eda.ipynb) provides fully reproducible code for all statistics and the 12 generated figures in [`outputs/figures/`](../outputs/figures/). The metadata dictionary [`reports/EDA_Data_Dictionary.md`](../reports/EDA_Data_Dictionary.md) documents all variable definitions and analytical handling.
 
 These verified datasets provide a sound foundation for subsequent database schema modeling, SQL pipeline implementation, and machine learning workflows in subsequent competition phases.

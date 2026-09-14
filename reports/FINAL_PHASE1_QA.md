@@ -1,13 +1,13 @@
 # Data Vortex — Phase 1 Final QA Audit
 
-**Competition:** Data Vortex — Round 1  
-**Audit Stage:** Final Quality Assurance Audit (Phase 1 Deliverables)  
-**Target Datasets:**  
-- Raw: `data/raw/Social_Engine_Users.csv`, `data/raw/Social_Engine_Posts_Corrupted.csv`  
-- Cleaned: `data/cleaned/Social_Engine_Users_Cleaned.csv`, `data/cleaned/Social_Engine_Posts_Cleaned.csv`  
-**Auditor:** Antigravity Automated QA Suite  
-**Date:** 2026-09-14  
-**Audit Status:** **READY (100% Verified)**  
+**Competition:** Data Vortex — Round 1
+**Audit Stage:** Final Quality Assurance Audit (Phase 1 Deliverables)
+**Target Datasets:**
+- Raw: `data/raw/Social_Engine_Users.csv`, `data/raw/Social_Engine_Posts_Corrupted.csv`
+- Cleaned: `data/cleaned/Social_Engine_Users_Cleaned.csv`, `data/cleaned/Social_Engine_Posts_Cleaned.csv`
+**Auditor:** Antigravity Automated QA Suite
+**Date:** 2026-09-14
+**Audit Status:** **READY (100% Verified)**
 
 ---
 
@@ -18,14 +18,14 @@ Every Phase 1 competition deliverable was audited against strict compliance crit
 | # | Requirement | Status | Evidence & Verification Reference |
 | :---: | :--- | :---: | :--- |
 | **1** | **Cleaned CSV Datasets** | **PASS** | `data/cleaned/Social_Engine_Users_Cleaned.csv` (1,500 rows, 5 cols) and `data/cleaned/Social_Engine_Posts_Cleaned.csv` (12,000 rows, 8 cols) exist, are UTF-8 compliant, and match verified schemas. |
-| **2** | **EDA Report** | **PASS** | [`reports/EDA_Report.md`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/EDA_Report.md) complete with all 11 required sections, embedded figure links, sample sizes, and non-causal evidence-based findings. |
-| **3** | **GitHub-Ready Notebooks** | **PASS** | All 6 notebooks in [`notebooks/`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/) (`01` through `06_final_eda.ipynb`) are structured, valid JSON, execute cleanly, and use relative paths. |
-| **4** | **Data Cleaning Code** | **PASS** | [`src/clean_data.py`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/src/clean_data.py) provides an end-to-end reproducible, fully asserted Python pipeline from `data/raw/` to `data/cleaned/`. |
-| **5** | **Documentation of Transformations** | **PASS** | [`reports/04_cleaning_validation.md`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/04_cleaning_validation.md) documents every applied transformation step-by-step with row counts before and after. |
-| **6** | **Justification of Cleaning Decisions** | **PASS** | [`reports/04_cleaning_decision_log.md`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/04_cleaning_decision_log.md) provides full statistical and domain justification for every accepted or rejected transformation. |
-| **7** | **Handling of Missing Values** | **PASS** | Zero imputation applied. Nulls in `platform` (1,784), `text_content` (1,711), and `likes` (1,814) preserved as missing. Documented in [`reports/EDA_Data_Dictionary.md`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/EDA_Data_Dictionary.md). |
-| **8** | **Identification of Anomalies/Corruption** | **PASS** | [`reports/03_combined_forensic_analysis.md`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/03_combined_forensic_analysis.md) categorizes confirmed corruption vs. legitimate synthetic characteristics. |
-| **9** | **EDA with Meaningful Visualizations** | **PASS** | Exactly 12 publication-quality visualizations generated with Matplotlib and saved to [`outputs/figures/`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/). |
+| **2** | **EDA Report** | **PASS** | [`reports/EDA_Report.md`](../reports/EDA_Report.md) complete with all 11 required sections, embedded figure links, sample sizes, and non-causal evidence-based findings. |
+| **3** | **GitHub-Ready Notebooks** | **PASS** | All 6 notebooks in [`notebooks/`](../notebooks/) (`01` through `06_final_eda.ipynb`) are structured, valid JSON, execute cleanly, and use relative paths. |
+| **4** | **Data Cleaning Code** | **PASS** | [`src/clean_data.py`](../src/clean_data.py) provides an end-to-end reproducible, fully asserted Python pipeline from `data/raw/` to `data/cleaned/`. |
+| **5** | **Documentation of Transformations** | **PASS** | [`reports/04_cleaning_validation.md`](../reports/04_cleaning_validation.md) documents every applied transformation step-by-step with row counts before and after. |
+| **6** | **Justification of Cleaning Decisions** | **PASS** | [`reports/04_cleaning_decision_log.md`](../reports/04_cleaning_decision_log.md) provides full statistical and domain justification for every accepted or rejected transformation. |
+| **7** | **Handling of Missing Values** | **PASS** | Zero imputation applied. Nulls in `platform` (1,784), `text_content` (1,711), and `likes` (1,814) preserved as missing. Documented in [`reports/EDA_Data_Dictionary.md`](../reports/EDA_Data_Dictionary.md). |
+| **8** | **Identification of Anomalies/Corruption** | **PASS** | [`reports/03_combined_forensic_analysis.md`](../reports/03_combined_forensic_analysis.md) categorizes confirmed corruption vs. legitimate synthetic characteristics. |
+| **9** | **EDA with Meaningful Visualizations** | **PASS** | Exactly 12 publication-quality visualizations generated with Matplotlib and saved to [`outputs/figures/`](../outputs/figures/). |
 | **10** | **Insights & Statistical Interpretation** | **PASS** | Top 10 validated findings in `EDA_Report.md` formatted with Title, Observation, Evidence, Interpretation, and Caveat; causal claims strictly avoided. |
 | **11** | **Reproducible Workflow** | **PASS** | Clean linear pipeline: Raw Data $\rightarrow$ Forensic Analysis $\rightarrow$ Cleaning $\rightarrow$ Validation $\rightarrow$ EDA $\rightarrow$ Final Reports. Notebooks reproduce all numbers. |
 | **12** | **Clear Assumptions & Limitations** | **PASS** | Section 10 of `EDA_Report.md` documents synthetic data bounds, timestamp resolution limits (date-only posts), missingness caveats, and absence of causal inference. |
@@ -58,7 +58,7 @@ Independent programmatic audits verified the physical and logical integrity of b
 
 ## 3. Cleaning Integrity
 
-The cleaning pipeline in [`src/clean_data.py`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/src/clean_data.py) was executed and audited against all documented cleaning decisions:
+The cleaning pipeline in [`src/clean_data.py`](../src/clean_data.py) was executed and audited against all documented cleaning decisions:
 
 ### Verified Transformations:
 - **Users Dataset:**
@@ -143,7 +143,7 @@ The Exploratory Data Analysis covers all critical dimensions of the benchmark:
 
 ## 7. Visualization Checklist
 
-All 12 publication-quality visualizations were verified in [`outputs/figures/`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/figures/):
+All 12 publication-quality visualizations were verified in [`outputs/figures/`](../outputs/figures/):
 
 | # | Figure Filename | Status | File Size | Verification Notes |
 | :---: | :--- | :---: | :---: | :--- |

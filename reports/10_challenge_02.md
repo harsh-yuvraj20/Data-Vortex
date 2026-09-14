@@ -1,12 +1,12 @@
 # Challenge 2 — Top Creator Audience Leaderboard
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 02 — Top Creator Audience Leaderboard  
-**Database File:** `data/data_vortex.db`  
-**Target Tables:** `users`, `posts`  
-**Difficulty:** Easy  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 02 — Top Creator Audience Leaderboard
+**Database File:** `data/data_vortex.db`
+**Target Tables:** `users`, `posts`
+**Difficulty:** Easy
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED**
 
 ---
 
@@ -28,10 +28,10 @@ The leaderboard is sorted by `follower_count` in descending order, restricted to
 
 ## 2. SQL Query
 
-The complete, verified SQL query is stored in [`sql/challenge_02_top_creator_audience.sql`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_02_top_creator_audience.sql):
+The complete, verified SQL query is stored in [`sql/challenge_02_top_creator_audience.sql`](../sql/challenge_02_top_creator_audience.sql):
 
 ```sql
-SELECT 
+SELECT
     u.user_id,
     u.location,
     u.language,
@@ -42,10 +42,10 @@ SELECT
     ROUND(AVG(p.comments), 2) AS avg_comments
 FROM users u
 INNER JOIN posts p ON u.user_id = p.user_id
-GROUP BY 
-    u.user_id, 
-    u.location, 
-    u.language, 
+GROUP BY
+    u.user_id,
+    u.location,
+    u.language,
     u.follower_count
 ORDER BY u.follower_count DESC
 LIMIT 20;
@@ -88,7 +88,7 @@ Below is an explanation of each clause and operational construct used in the que
 
 ## 4. Results
 
-Executing the query against [`data/data_vortex.db`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/data_vortex.db) generates 1,500 total creator rows before the `LIMIT` clause. The top 20 rows are presented in Table 4.1.
+Executing the query against [`data/data_vortex.db`](../data/data_vortex.db) generates 1,500 total creator rows before the `LIMIT` clause. The top 20 rows are presented in Table 4.1.
 
 ### Table 4.1: Top 20 Creator Audience Leaderboard
 
@@ -192,4 +192,4 @@ conn.close()
 ```
 
 ### Via Jupyter Notebook:
-Open and execute all cells in [`notebooks/09_challenge_02.ipynb`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/09_challenge_02.ipynb).
+Open and execute all cells in [`notebooks/09_challenge_02.ipynb`](../notebooks/09_challenge_02.ipynb).

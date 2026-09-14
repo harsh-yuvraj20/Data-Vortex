@@ -1,12 +1,12 @@
 # Final Reconciliation Audit Report: Raw vs. Cleaned Datasets
 
-**Competition:** Data Vortex - Round 1  
-**Audit Target:** Reconcile all metric discrepancies between raw and cleaned posts datasets  
-- **Raw File:** [data/raw/Social_Engine_Posts_Corrupted.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/raw/Social_Engine_Posts_Corrupted.csv) (12,360 rows)  
-- **Cleaned File:** [data/cleaned/Social_Engine_Posts_Cleaned.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/cleaned/Social_Engine_Posts_Cleaned.csv) (12,000 rows)  
-- **Users Baseline:** [data/cleaned/Social_Engine_Users_Cleaned.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/cleaned/Social_Engine_Users_Cleaned.csv) (1,500 rows)  
-**Execution Date:** 2026-09-14  
-**Audit Status:** Completed — 100% Reconciled and Mathematically Verified  
+**Competition:** Data Vortex - Round 1
+**Audit Target:** Reconcile all metric discrepancies between raw and cleaned posts datasets
+- **Raw File:** [data/raw/Social_Engine_Posts_Corrupted.csv](../data/raw/Social_Engine_Posts_Corrupted.csv) (12,360 rows)
+- **Cleaned File:** [data/cleaned/Social_Engine_Posts_Cleaned.csv](../data/cleaned/Social_Engine_Posts_Cleaned.csv) (12,000 rows)
+- **Users Baseline:** [data/cleaned/Social_Engine_Users_Cleaned.csv](../data/cleaned/Social_Engine_Users_Cleaned.csv) (1,500 rows)
+**Execution Date:** 2026-09-14
+**Audit Status:** Completed — 100% Reconciled and Mathematically Verified
 
 ---
 

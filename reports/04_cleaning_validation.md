@@ -1,12 +1,12 @@
 # Data Cleaning Validation Report
 
-**Competition:** Data Vortex - Round 1  
-**Execution Date:** 2026-09-14  
-**Pipeline Source:** [src/clean_data.py](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/src/clean_data.py)  
-**Notebook Reference:** [notebooks/04_data_cleaning.ipynb](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/04_data_cleaning.ipynb)  
-**Target Cleaned Files:**  
-- [data/cleaned/Social_Engine_Users_Cleaned.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/cleaned/Social_Engine_Users_Cleaned.csv)  
-- [data/cleaned/Social_Engine_Posts_Cleaned.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/cleaned/Social_Engine_Posts_Cleaned.csv)  
+**Competition:** Data Vortex - Round 1
+**Execution Date:** 2026-09-14
+**Pipeline Source:** [src/clean_data.py](../src/clean_data.py)
+**Notebook Reference:** [notebooks/04_data_cleaning.ipynb](../notebooks/04_data_cleaning.ipynb)
+**Target Cleaned Files:**
+- [data/cleaned/Social_Engine_Users_Cleaned.csv](../data/cleaned/Social_Engine_Users_Cleaned.csv)
+- [data/cleaned/Social_Engine_Posts_Cleaned.csv](../data/cleaned/Social_Engine_Posts_Cleaned.csv)
 
 ---
 
@@ -173,4 +173,4 @@ All non-missing likes are strictly non-negative integers $\le 5,000$. Shares and
 
 1. **No Data Fabrication:** Missing values in `platform`, `text_content`, and `likes` were strictly retained as nulls. No imputation (mean, median, mode, random, or constants) was applied.
 2. **Provenance & Immutability:** Both raw files (`Social_Engine_Users.csv` and `Social_Engine_Posts_Corrupted.csv`) remain byte-for-byte identical to their initial state.
-3. **Reproducibility:** The entire transformation pipeline is encapsulated deterministically in [src/clean_data.py](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/src/clean_data.py) and demonstrated in [notebooks/04_data_cleaning.ipynb](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/04_data_cleaning.ipynb).
+3. **Reproducibility:** The entire transformation pipeline is encapsulated deterministically in [src/clean_data.py](../src/clean_data.py) and demonstrated in [notebooks/04_data_cleaning.ipynb](../notebooks/04_data_cleaning.ipynb).

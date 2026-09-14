@@ -1,12 +1,12 @@
 # Challenge 10 — Month-over-Month Volume Growth & Cumulative Tracking
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 10 — Month-over-Month Volume Growth & Cumulative Tracking  
-**Database File:** `data/data_vortex.db`  
-**Target Table:** `posts`  
-**Difficulty:** Medium  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED (FINAL SQL CHALLENGE)**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 10 — Month-over-Month Volume Growth & Cumulative Tracking
+**Database File:** `data/data_vortex.db`
+**Target Table:** `posts`
+**Difficulty:** Medium
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED (FINAL SQL CHALLENGE)**
 
 ---
 
@@ -38,14 +38,14 @@ LAG(post_count) OVER (ORDER BY month) AS previous_month_post_count
 ### 2. Cumulative `SUM() OVER (...)` Window Function
 ```sql
 SUM(post_count) OVER (
-    ORDER BY month 
+    ORDER BY month
     ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
 ) AS cumulative_post_count
 ```
 - **Operational Mechanics:** Computes a running aggregate from the start of the partition (`UNBOUNDED PRECEDING`) through the active record (`CURRENT ROW`).
 - **Monotonicity:** Because all monthly counts are positive ($post\_count \ge 914$), `cumulative_post_count` increases monotonically, starting at 1,038 in Month 1 and culminating at exactly 12,000 in Month 12.
 
-All queries are maintained in [`sql/challenge_10_mom_volume_growth.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_10_mom_volume_growth.sql).
+All queries are maintained in [`sql/challenge_10_mom_volume_growth.sql`](../sql/challenge_10_mom_volume_growth.sql).
 
 ---
 

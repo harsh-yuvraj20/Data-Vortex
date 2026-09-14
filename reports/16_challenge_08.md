@@ -1,12 +1,12 @@
 # Challenge 8 — High-Impact Post Leaderboard
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 08 — High-Impact Post Leaderboard  
-**Database File:** `data/data_vortex.db`  
-**Target Table:** `posts`  
-**Difficulty:** Low–Medium  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 08 — High-Impact Post Leaderboard
+**Database File:** `data/data_vortex.db`
+**Target Table:** `posts`
+**Difficulty:** Low–Medium
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED**
 
 ---
 
@@ -40,7 +40,7 @@ $$\text{total\_engagement} = \text{COALESCE}(likes, 0) + \text{COALESCE}(shares,
 - **Raw Data Preservation:** The reported columns `likes`, `shares`, and `comments` preserve their native values (including existing NULLs) without database modification.
 - **Determinism:** `ROW_NUMBER() OVER (...)` guarantees unique, deterministic integer ranks from 1 to 20.
 
-All queries are maintained in [`sql/challenge_08_high_impact_post_leaderboard.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_08_high_impact_post_leaderboard.sql).
+All queries are maintained in [`sql/challenge_08_high_impact_post_leaderboard.sql`](../sql/challenge_08_high_impact_post_leaderboard.sql).
 
 ---
 

@@ -1,12 +1,12 @@
 # Challenge 4 — Creator Activity Segmentation
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 04 — Creator Activity Segmentation  
-**Database File:** `data/data_vortex.db`  
-**Target Tables:** `users`, `posts`  
-**Difficulty:** Medium  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 04 — Creator Activity Segmentation
+**Database File:** `data/data_vortex.db`
+**Target Tables:** `users`, `posts`
+**Difficulty:** Medium
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED**
 
 ---
 
@@ -33,10 +33,10 @@ Specifically, this challenge requires:
 
 To understand creator behavior and publishing cadence, creators are partitioned into three analytical tiers based on total post volume:
 
-$$\text{Activity Tier} = \begin{cases} 
-\text{Low Activity} & \text{if } 1 \le \text{post\_count} \le 5 \\ 
-\text{Medium Activity} & \text{if } 6 \le \text{post\_count} \le 10 \\ 
-\text{High Activity} & \text{if } \text{post\_count} \ge 11 
+$$\text{Activity Tier} = \begin{cases}
+\text{Low Activity} & \text{if } 1 \le \text{post\_count} \le 5 \\
+\text{Medium Activity} & \text{if } 6 \le \text{post\_count} \le 10 \\
+\text{High Activity} & \text{if } \text{post\_count} \ge 11
 \end{cases}$$
 
 ### Analytical Justification for Segmentation:
@@ -55,7 +55,7 @@ The first step computes each user's total post count and applies the segmentatio
 ### SQL Implementation
 ```sql
 WITH creator_activity AS (
-    SELECT 
+    SELECT
         u.user_id,
         u.location,
         u.follower_count,
@@ -64,7 +64,7 @@ WITH creator_activity AS (
     INNER JOIN posts p ON u.user_id = p.user_id
     GROUP BY u.user_id, u.location, u.follower_count
 )
-SELECT 
+SELECT
     user_id,
     location,
     follower_count,
@@ -101,7 +101,7 @@ The query processes all 1,500 users and returns 1,500 distinct creator records. 
 
 ## 4. Segment Summary
 
-To profile the activity tiers, we compute summary metrics for each segment. 
+To profile the activity tiers, we compute summary metrics for each segment.
 
 ### Methodological Distinction: Micro-Average vs. Macro-Average
 - **Micro-Average (Post-Weighted Average):** Computes average engagement metrics directly across all posts authored by creators in that segment. Each post has equal weight.
@@ -112,7 +112,7 @@ Both approaches are calculated below for complete transparency.
 ### Primary Segment Summary (Micro-Average: Post-Level Engagement)
 ```sql
 WITH creator_activity AS (
-    SELECT 
+    SELECT
         u.user_id,
         u.follower_count,
         COUNT(p.post_id) AS post_count
@@ -121,7 +121,7 @@ WITH creator_activity AS (
     GROUP BY u.user_id, u.follower_count
 ),
 creator_segments AS (
-    SELECT 
+    SELECT
         user_id,
         follower_count,
         post_count,
@@ -133,7 +133,7 @@ creator_segments AS (
     FROM creator_activity
 ),
 segment_creators AS (
-    SELECT 
+    SELECT
         activity_segment,
         COUNT(*) AS creator_count,
         ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM users), 2) AS creator_percentage,
@@ -143,7 +143,7 @@ segment_creators AS (
     GROUP BY activity_segment
 ),
 segment_posts AS (
-    SELECT 
+    SELECT
         cs.activity_segment,
         COUNT(p.post_id) AS total_posts,
         ROUND(AVG(p.likes), 2) AS avg_likes_per_post,
@@ -153,7 +153,7 @@ segment_posts AS (
     INNER JOIN creator_segments cs ON p.user_id = cs.user_id
     GROUP BY cs.activity_segment
 )
-SELECT 
+SELECT
     sc.activity_segment,
     sc.creator_count,
     sc.creator_percentage,
@@ -165,7 +165,7 @@ SELECT
     sp.avg_comments_per_post
 FROM segment_creators sc
 INNER JOIN segment_posts sp ON sc.activity_segment = sp.activity_segment
-ORDER BY 
+ORDER BY
     CASE sc.activity_segment
         WHEN 'Low Activity' THEN 1
         WHEN 'Medium Activity' THEN 2
@@ -237,7 +237,7 @@ To identify the top performers within each activity segment, creators are ranked
 ### SQL Window Function Implementation
 ```sql
 WITH creator_stats AS (
-    SELECT 
+    SELECT
         u.user_id,
         u.location,
         u.follower_count,
@@ -255,7 +255,7 @@ WITH creator_stats AS (
     GROUP BY u.user_id, u.location, u.follower_count
 ),
 ranked_creators AS (
-    SELECT 
+    SELECT
         activity_segment,
         user_id,
         location,
@@ -265,12 +265,12 @@ ranked_creators AS (
         avg_shares,
         avg_comments,
         ROW_NUMBER() OVER (
-            PARTITION BY activity_segment 
+            PARTITION BY activity_segment
             ORDER BY avg_likes DESC, follower_count DESC
         ) AS rank_in_segment
     FROM creator_stats
 )
-SELECT 
+SELECT
     activity_segment,
     rank_in_segment,
     user_id,
@@ -282,7 +282,7 @@ SELECT
     avg_comments
 FROM ranked_creators
 WHERE rank_in_segment <= 5
-ORDER BY 
+ORDER BY
     CASE activity_segment
         WHEN 'Low Activity' THEN 1
         WHEN 'Medium Activity' THEN 2
@@ -390,20 +390,20 @@ The segmentation and leaderboard queries leverage several fundamental and advanc
 ### Answers to Analytical Inquiries:
 
 #### 1. Are high-activity creators also the creators with the highest follower counts?
-**Answer: No.**  
-The data shows that creators in the `Low Activity` segment had the highest observed average follower count (**25,323.28**), followed by `Medium Activity` (**25,056.98**), while `High Activity` creators exhibited the lowest observed average follower count (**24,319.51**).  
+**Answer: No.**
+The data shows that creators in the `Low Activity` segment had the highest observed average follower count (**25,323.28**), followed by `Medium Activity` (**25,056.98**), while `High Activity` creators exhibited the lowest observed average follower count (**24,319.51**).
 The Pearson correlation between author post volume and follower count is negligible ($r = -0.014$). Therefore, higher posting volume was not associated with having a higher follower count.
 
 #### 2. Does higher posting frequency correspond to higher average likes?
-**Answer: No.**  
+**Answer: No.**
 The observed average likes per post were **2,425.33** for Low Activity, **2,499.26** for Medium Activity, and **2,498.84** for High Activity. The difference between Medium and High Activity is a fraction of a like (0.42 likes, or 0.017%), and the spread across all three segments is within 3%. Similarly, creator-level macro averages (2,414.59 vs. 2,491.33 vs. 2,497.29) show virtually flat engagement across activity tiers.
 
 #### 3. Which segment appears strongest based on average engagement?
-**Answer:**  
+**Answer:**
 Engagement strength varies subtly depending on the specific metric:
 - **Likes:** `Medium Activity` had the highest observed per-post average (2,499.26), virtually tied with `High Activity` (2,498.84).
 - **Comments:** `Medium Activity` had the highest observed per-post average (505.59).
-- **Shares:** `Low Activity` had the highest observed per-post average (1,026.88) and macro average (1,034.36).  
+- **Shares:** `Low Activity` had the highest observed per-post average (1,026.88) and macro average (1,034.36).
 Overall, no activity segment decisively dominated engagement; the data shows that per-post interaction benchmarks remain remarkably uniform across creator activity levels.
 
 ### Analytical Limitations & Non-Causal Framing:
@@ -445,7 +445,7 @@ creator_segments AS (
         END AS activity_segment
     FROM creator_activity
 )
-SELECT 
+SELECT
     activity_segment,
     COUNT(*) AS creator_count,
     ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM users), 2) AS pct_creators,

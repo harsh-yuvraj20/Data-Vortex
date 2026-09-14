@@ -1,12 +1,12 @@
 # Challenge 3 — Geographic Representation & Country Aggregation
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 03 — Geographic Representation & Country Aggregation  
-**Database File:** `data/data_vortex.db`  
-**Target Tables:** `users`, `posts`  
-**Difficulty:** Medium  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 03 — Geographic Representation & Country Aggregation
+**Database File:** `data/data_vortex.db`
+**Target Tables:** `users`, `posts`
+**Difficulty:** Medium
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED**
 
 ---
 
@@ -30,9 +30,9 @@ The challenge requires:
 Country extraction is achieved dynamically using standard SQLite string functions:
 
 ```sql
-CASE 
+CASE
     WHEN INSTR(location, ',') > 0 THEN TRIM(SUBSTR(location, INSTR(location, ',') + 1))
-    ELSE location 
+    ELSE location
 END AS country
 ```
 
@@ -40,7 +40,7 @@ END AS country
 1. **`INSTR(location, ',')`**: Searches for the 1-based character position of the comma delimiter.
    - For `"Berlin, Germany"`, `INSTR` returns `7`.
    - For `"Singapore"`, there is no comma, so `INSTR` returns `0`.
-2. **`CASE WHEN INSTR(...) > 0`**: 
+2. **`CASE WHEN INSTR(...) > 0`**:
    - When a comma is present, `SUBSTR(location, INSTR(location, ',') + 1)` extracts all characters starting immediately after the comma (e.g. `" Germany"`).
    - `TRIM(...)` strips any leading whitespace, yielding the clean country string `"Germany"`.
 3. **`ELSE location`**:
@@ -52,21 +52,21 @@ END AS country
 
 ## 3. SQL Queries
 
-All queries are consolidated in [`sql/challenge_03_geographic_analysis.sql`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_03_geographic_analysis.sql).
+All queries are consolidated in [`sql/challenge_03_geographic_analysis.sql`](../sql/challenge_03_geographic_analysis.sql).
 
 ### Query 1: Country-Level User Demographic Analysis
 ```sql
 WITH user_countries AS (
-    SELECT 
+    SELECT
         user_id,
         follower_count,
-        CASE 
+        CASE
             WHEN INSTR(location, ',') > 0 THEN TRIM(SUBSTR(location, INSTR(location, ',') + 1))
-            ELSE location 
+            ELSE location
         END AS country
     FROM users
 )
-SELECT 
+SELECT
     country,
     COUNT(*) AS user_count,
     ROUND(AVG(follower_count), 2) AS avg_followers,
@@ -80,15 +80,15 @@ ORDER BY user_count DESC, country ASC;
 ### Query 2: Country-Level Post Publishing & Interaction Analysis
 ```sql
 WITH user_countries AS (
-    SELECT 
+    SELECT
         user_id,
-        CASE 
+        CASE
             WHEN INSTR(location, ',') > 0 THEN TRIM(SUBSTR(location, INSTR(location, ',') + 1))
-            ELSE location 
+            ELSE location
         END AS country
     FROM users
 )
-SELECT 
+SELECT
     uc.country,
     COUNT(DISTINCT uc.user_id) AS user_count,
     COUNT(p.post_id) AS post_count,
@@ -106,7 +106,7 @@ ORDER BY post_count DESC, uc.country ASC;
 
 ## 4. Country-Level User Results
 
-Executing Query 1 against [`data/data_vortex.db`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/data_vortex.db) identifies **19 unique countries** across the 1,500 users:
+Executing Query 1 against [`data/data_vortex.db`](../data/data_vortex.db) identifies **19 unique countries** across the 1,500 users:
 
 ### Table 4.1: Country Demographic Distribution ($N = 1,500$ Users)
 
@@ -258,4 +258,4 @@ conn.close()
 ```
 
 ### Via Jupyter Notebook:
-Execute all cells in [`notebooks/10_challenge_03.ipynb`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/10_challenge_03.ipynb).
+Execute all cells in [`notebooks/10_challenge_03.ipynb`](../notebooks/10_challenge_03.ipynb).

@@ -1,12 +1,12 @@
 # Challenge 9 — Regional Creator Leadership via Window Functions
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 09 — Regional Creator Leadership via Window Functions  
-**Database File:** `data/data_vortex.db`  
-**Target Tables:** `users`, `posts`  
-**Difficulty:** Medium  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 09 — Regional Creator Leadership via Window Functions
+**Database File:** `data/data_vortex.db`
+**Target Tables:** `users`, `posts`
+**Difficulty:** Medium
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED**
 
 ---
 

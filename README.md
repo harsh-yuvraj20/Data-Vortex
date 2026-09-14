@@ -17,7 +17,7 @@ The official final deliverable is the 29-page verified submission report:
 The Data Vortex project analyzes creator behavior, content engagement, publishing cadence, and platform performance across a multi-platform social media ecosystem. The raw input data suffered from systematic corruption, heterogeneous formatting, duplicate records, and sign inversion errors. 
 
 Across two competition phases, this project:
-1. **Audited & Cleaned Raw Data (Phase 1):** Uncovered root-cause corruptions, eliminated 360 duplicate records, inverted 1,228 negative engagement values, standardized multi-format timestamps, cleaned text artifacts, and preserved missing values without synthetic fabrication.
+1. **Audited & Cleaned Raw Data (Phase 1):** Uncovered root-cause corruptions, eliminated 360 duplicate records, corrected 509 negative likes in the deduplicated dataset, standardized multi-format timestamps, cleaned text artifacts, and preserved missing values without synthetic fabrication.
 2. **Explored Behavioral Dynamics (Phase 1 EDA):** Conducted rigorous exploratory data analysis producing 12 publication-ready visualizations uncovering creator skewness, platform volume patterns, and follower-to-engagement dynamics.
 3. **Engineered Relational Architecture (Phase 2):** Built an optimized SQLite relational database (`data_vortex.db`) enforcing referential integrity, check constraints, and composite indexes.
 4. **Executed 10 SQL Challenges (Phase 2):** Answered complex business and behavioral questions using Common Table Expressions (CTEs), window functions (`LAG`, `SUM() OVER`, `DENSE_RANK() OVER`), and statistical aggregations across 12,000 posts and 1,500 creators.
@@ -30,10 +30,10 @@ Across two competition phases, this project:
 | :--- | :--- | :--- | :--- |
 | **Users / Creators** | 1,500 rows | 1,500 rows | 100% unique primary keys, 0 missing values |
 | **Posts Volume** | 12,360 rows | 12,000 rows | 360 duplicates removed, 0 data loss |
-| **Engagement Validity** | 1,228 negative likes | 0 negative likes | Rectified via absolute value inversion |
+| **Engagement Validity** | 525 negative likes (509 after deduplication) | 0 negative likes | Rectified via absolute value inversion |
 | **Timestamp Fidelity** | 3 conflicting formats | 100% ISO (`YYYY-MM-DD HH:MM:SS`) | Verified period: 2024-05-01 to 2025-04-30 |
 | **Referential Integrity** | Unchecked | 100% valid (`posts.user_id` $\rightarrow$ `users.user_id`) | 0 orphan posts, enforced via Foreign Keys |
-| **Missing Values** | Uncontrolled | platform: 588, text: 615, likes: 622 | Preserved as true `NULL`s per governance rules |
+| **Missing Values** | platform: 1,846, text: 1,746, likes: 1,858 | platform: 1,784, text: 1,711, likes: 1,814 | Preserved as true `NULL`s per governance rules |
 | **Database File** | N/A | `data/data_vortex.db` (3.36 MB) | Indexed SQLite 3 schema |
 | **SQL Deliverables** | N/A | 10 Challenge Scripts + 10 Reports + 10 Notebooks | 100% tested and cross-reconciled |
 
@@ -137,17 +137,17 @@ DATA-VORTEX/
 
 ### 1. Data Cleaning Transformations
 - **Deduplication:** Identified 360 redundant rows in `Social_Engine_Posts_Corrupted.csv` resulting from byte-level logging duplicates. Deduplication reduced the row count from 12,360 to exactly 12,000 unique posts.
-- **Negative Engagement Sign Correction:** 1,228 records contained negative `likes` values due to sensor sign-bit inversion. Corrected via `abs(likes)` with 0 data loss.
+- **Negative Engagement Sign Correction:** 525 raw records contained negative `likes` values due to sensor sign-bit inversion. After exact deduplication, the 509 retained negative values were corrected via `abs(likes)` with 0 data loss.
 - **Timestamp Standardization:** Standardized three concurrent formats into ISO `YYYY-MM-DD HH:MM:SS`:
   - 10-digit Unix epoch timestamps (e.g., `1722528840` $\rightarrow$ `2024-08-01 16:14:00`)
   - ISO 8601 strings (e.g., `2025-04-13T20:12:18` $\rightarrow$ `2025-04-13 20:12:18`)
   - European date format (e.g., `25-09-2024` $\rightarrow$ `2024-09-25 00:00:00`)
 - **Text Standardization:** Stripped leading/trailing whitespace and decoded escaped HTML entities (`&amp;` $\rightarrow$ `&`).
-- **Missing Value Governance:** Explicitly preserved genuine missing values (588 missing `platform`, 615 missing `text_content`, 622 missing `likes`) without synthetic imputation to preserve statistical integrity.
+- **Missing Value Governance:** Explicitly preserved genuine missing values (1,784 missing `platform`, 1,711 missing `text_content`, 1,814 missing `likes`) without synthetic imputation to preserve statistical integrity.
 
 ### 2. Exploratory Insights
-- **Follower Distribution:** Power-law distribution with mean follower count of 25,650 and high right-skewness (max: 49,997).
-- **Platform Breakdown:** Instagram leads total post volume (3,844 posts; 32.03%), followed by TikTok (3,803 posts; 31.69%) and YouTube (3,765 posts; 31.38%), with 4.90% unclassified (`NULL`).
+- **Follower Distribution:** Broad, near-uniform distribution with mean follower count of 24,964 and maximum of 49,944.
+- **Platform Breakdown:** The five identified platforms are evenly represented (1,989–2,074 posts each); Facebook has the largest volume (2,074 posts; 17.28%) and 1,784 posts (14.87%) have no platform metadata.
 - **Engagement Independence:** Follower count demonstrates near-zero Pearson correlation with per-post likes ($r = -0.003$) and shares ($r = 0.001$), revealing that content virality is driven by algorithmic discovery rather than static audience size.
 
 ---
@@ -162,9 +162,9 @@ The SQLite database (`data/data_vortex.db`) models two core entities:
 
 | # | Challenge Name | Primary SQL Techniques | Key Finding / Business Insight |
 | :-: | :--- | :--- | :--- |
-| **01** | **Platform Interaction Benchmarks** | `AVG()`, `ROUND()`, `GROUP BY`, `COALESCE` | Instagram leads in average likes (1,300.9) and total engagement; YouTube leads in average comments (149.9). |
-| **02** | **Top Creator Audience Reach** | `ORDER BY follower_count DESC LIMIT 10` | Top 10 creators hold 493,529 combined followers (avg 49,353), led by `user_09d290fa` (49,997 followers). |
-| **03** | **Geographic Analysis** | String parsing, `SUBSTR()`, `INSTR()`, `GROUP BY` | 15 distinct countries; United States (306 creators; 20.4%) and Brazil (202 creators; 13.5%) represent the largest creator hubs. |
+| **01** | **Platform Interaction Benchmarks** | `AVG()`, `ROUND()`, `GROUP BY`, `COALESCE` | Facebook leads average likes (2,528.86); Reddit leads average comments (511.18); Instagram leads average total interactions (3,669.38). |
+| **02** | **Top Creator Audience Reach** | `ORDER BY follower_count DESC LIMIT 20` | The top 20 creators hold 993,813 combined followers (avg 49,690.65), led by `user_3o7w66o2` (49,944 followers). |
+| **03** | **Geographic Analysis** | String parsing, `SUBSTR()`, `INSTR()`, `GROUP BY` | 19 distinct countries; the USA (203 creators; 13.53%) and China (107 creators; 7.13%) are the largest creator hubs. |
 | **04** | **Creator Activity Segmentation** | `CASE WHEN`, CTEs, aggregated subqueries | High activity creators ($\ge 11$ posts) author 21.6% of content despite representing only 18.0% of creators. |
 | **05** | **Monthly Publishing Trends** | `strftime()`, `LAG() OVER()`, `SUM() OVER()` | Publishing volume remained stable across 12 months (avg 1,000 posts/mo), peaking in October 2024 (1,048 posts). |
 | **06** | **Day-of-Week Posting Cadence** | `strftime('%w')`, modulo indexing, `GROUP BY` | Publishing activity is uniformly distributed across all 7 days (13.7%–14.8% per day); Friday is peak (1,779 posts). |

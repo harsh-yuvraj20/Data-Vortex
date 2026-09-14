@@ -110,6 +110,7 @@ def clean_text_content(text):
       - Trim leading and trailing whitespace.
       - Decode literal HTML entity '&amp;' to '&'.
       - Missing values remain NaN (unmodified).
+      - Literal ``NULL`` placeholders become missing values.
     """
     if pd.isna(text):
         return text
@@ -117,7 +118,10 @@ def clean_text_content(text):
     cleaned = str(text).strip()
     # Decode literal '&amp;' to '&'
     cleaned = cleaned.replace("&amp;", "&")
-    return cleaned
+    # The source includes literal NULL placeholders with trailing whitespace.
+    # Treating them as missing keeps the in-memory validation and exported CSV
+    # consistent with the SQLite loader's NULL handling.
+    return pd.NA if cleaned == "NULL" else cleaned
 
 
 def clean_posts_dataset(raw_path: str, cleaned_path: str, valid_user_ids: set) -> pd.DataFrame:

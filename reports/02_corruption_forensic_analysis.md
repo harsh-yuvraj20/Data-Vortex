@@ -1,21 +1,21 @@
 # Forensic Corruption Analysis & Integrity Audit
 
-**Competition:** Data Vortex - Round 1  
-**Target Dataset:** `data/raw/Social_Engine_Users.csv`  
-**Phase:** Phase 1 - Deep Forensic Corruption Audit  
-**Audit Date:** 2026-09-14  
+**Competition:** Data Vortex - Round 1
+**Target Dataset:** `data/raw/Social_Engine_Users.csv`
+**Phase:** Phase 1 - Deep Forensic Corruption Audit
+**Audit Date:** 2026-09-14
 **Integrity Rule:** The raw dataset remains strictly untouched and unmodified.
 
 ---
 
 ## 1. Executive Summary
 
-This forensic investigation was conducted to determine whether any data records in [data/raw/Social_Engine_Users.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/raw/Social_Engine_Users.csv) suffer from genuine data corruption (e.g., bit-flips, byte truncation, malformed encodings, delimiter shifts, null value drops, or impossible entities), or whether atypical statistical properties stem from intentional synthetic data generation.
+This forensic investigation was conducted to determine whether any data records in [data/raw/Social_Engine_Users.csv](../data/raw/Social_Engine_Users.csv) suffer from genuine data corruption (e.g., bit-flips, byte truncation, malformed encodings, delimiter shifts, null value drops, or impossible entities), or whether atypical statistical properties stem from intentional synthetic data generation.
 
 ### Key Takeaway
 - **Confirmed Corruption:** **0 records (0.0%)**.
 - **Potential Corruption:** **0 records (0.0%)**.
-- **Synthetic & Structural Artifacts:** 
+- **Synthetic & Structural Artifacts:**
   - `Singapore` is recorded as a single entity without a country suffix (49 rows, 3.27%), which is geographically valid for a sovereign city-state.
   - Statistical independence between user location and language ($\chi^2 = 279.56, df = 288, p \approx 0.63$), reflecting synthetic randomization.
   - Uniform distribution of `follower_count` over $[100, 50000]$ (Kurtosis $\approx -1.19$), reflecting synthetic generation.
@@ -225,7 +225,7 @@ The table below classifies every evaluated anomaly, formatting quirk, and statis
 
 ## 7. Deliverables & Next Steps
 
-- **Forensic Report:** [reports/02_corruption_forensic_analysis.md](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/02_corruption_forensic_analysis.md)
-- **Forensic Notebook:** [notebooks/02_corruption_forensic_analysis.ipynb](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/02_corruption_forensic_analysis.ipynb)
+- **Forensic Report:** [reports/02_corruption_forensic_analysis.md](../reports/02_corruption_forensic_analysis.md)
+- **Forensic Notebook:** [notebooks/02_corruption_forensic_analysis.ipynb](../notebooks/02_corruption_forensic_analysis.ipynb)
 
 *Awaiting user approval before taking any action or advancing to data preparation.*

@@ -1,12 +1,12 @@
 # Challenge 6 — Day-of-Week Posting Cadence
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 06 — Day-of-Week Posting Cadence  
-**Database File:** `data/data_vortex.db`  
-**Target Table:** `posts`  
-**Difficulty:** Low–Medium  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 06 — Day-of-Week Posting Cadence
+**Database File:** `data/data_vortex.db`
+**Target Table:** `posts`
+**Difficulty:** Low–Medium
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED**
 
 ---
 
@@ -33,11 +33,11 @@ The query uses SQLite's date formatting function `strftime()` and a `CASE` expre
 - **`ROUND(100.0 * COUNT(post_id) / (SELECT COUNT(*) FROM posts), 2)`**: Evaluates each day's percentage share of the 12,000 total posts.
 - **`ORDER BY day_number ASC`**: Ensures chronological presentation from Monday (1) to Sunday (7).
 
-All SQL statements are located in [`sql/challenge_06_day_of_week_cadence.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_06_day_of_week_cadence.sql).
+All SQL statements are located in [`sql/challenge_06_day_of_week_cadence.sql`](../sql/challenge_06_day_of_week_cadence.sql).
 
 ```sql
 WITH daily_posts AS (
-    SELECT 
+    SELECT
         post_id,
         CAST(strftime('%u', timestamp) AS INTEGER) AS day_number,
         CASE CAST(strftime('%u', timestamp) AS INTEGER)
@@ -51,7 +51,7 @@ WITH daily_posts AS (
         END AS day_of_week
     FROM posts
 )
-SELECT 
+SELECT
     day_of_week,
     day_number,
     COUNT(post_id) AS post_count,

@@ -1,13 +1,13 @@
 # Data Vortex — Phase 2 Database Setup & Validation Report
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Database Engine:** SQLite 3  
-**Target Database File:** `data/data_vortex.db`  
-**Source Datasets:**  
-- `data/cleaned/Social_Engine_Users_Cleaned.csv` (1,500 records)  
-- `data/cleaned/Social_Engine_Posts_Cleaned.csv` (12,000 records)  
-**Date:** 2026-09-14  
-**Setup Status:** **READY (100% Validated)**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Database Engine:** SQLite 3
+**Target Database File:** `data/data_vortex.db`
+**Source Datasets:**
+- `data/cleaned/Social_Engine_Users_Cleaned.csv` (1,500 records)
+- `data/cleaned/Social_Engine_Posts_Cleaned.csv` (12,000 records)
+**Date:** 2026-09-14
+**Setup Status:** **READY (100% Validated)**
 
 ---
 
@@ -99,7 +99,7 @@ Missing data in the cleaned CSV files are explicitly preserved as true SQL `NULL
 
 ## 6. Data Loading Pipeline
 
-Data ingestion is orchestrated by [`src/load_sqlite.py`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/src/load_sqlite.py):
+Data ingestion is orchestrated by [`src/load_sqlite.py`](../src/load_sqlite.py):
 
 ```
 data/cleaned/Social_Engine_Users_Cleaned.csv  --> users table (1,500 rows)
@@ -111,7 +111,7 @@ data/cleaned/Social_Engine_Posts_Cleaned.csv  --> posts table (12,000 rows)
 
 ### Ingestion Steps:
 1. **Database Reset:** If `data/data_vortex.db` exists, it is unlinked and recreated cleanly.
-2. **DDL Application:** [`sql/01_schema.sql`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/01_schema.sql) is executed with `PRAGMA foreign_keys = ON;`.
+2. **DDL Application:** [`sql/01_schema.sql`](../sql/01_schema.sql) is executed with `PRAGMA foreign_keys = ON;`.
 3. **Users Ingestion:** Loaded first via parameterized `executemany()` to establish parent keys. UTF-8 encoding preserves accented characters.
 4. **Posts Ingestion:** Loaded second. Empty strings and literal `"NULL"` tokens are cast to Python `None` to produce true SQL `NULL`s.
 5. **Index Creation:** Indexes on `posts(user_id)`, `posts(timestamp)`, and `posts(platform)` are created post-ingestion for optimal performance.
@@ -121,7 +121,7 @@ data/cleaned/Social_Engine_Posts_Cleaned.csv  --> posts table (12,000 rows)
 
 ## 7. Validation Results
 
-The database was tested against the full validation query suite in [`sql/02_load_and_validation.sql`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/02_load_and_validation.sql):
+The database was tested against the full validation query suite in [`sql/02_load_and_validation.sql`](../sql/02_load_and_validation.sql):
 
 | Validation Check | SQL Query / Metric | Expected Value | Actual Value | Status |
 | :--- | :--- | :---: | :---: | :---: |
@@ -203,7 +203,7 @@ sqlite3 data/data_vortex.db < sql/02_load_and_validation.sql
 ```
 
 ### Option C: Jupyter Notebook
-Run all cells in [`notebooks/07_sql_database_setup.ipynb`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/07_sql_database_setup.ipynb).
+Run all cells in [`notebooks/07_sql_database_setup.ipynb`](../notebooks/07_sql_database_setup.ipynb).
 
 ---
 

@@ -1,17 +1,17 @@
 # Combined Forensic Analysis & Cross-Dataset Audit Report
 
-**Competition:** Data Vortex - Round 1  
-**Datasets Under Audit:**  
-1. `data/raw/Social_Engine_Users.csv` (1,500 user profile records)  
-2. `data/raw/Social_Engine_Posts_Corrupted.csv` (12,360 post interaction records)  
-**Audit Date:** 2026-09-14  
+**Competition:** Data Vortex - Round 1
+**Datasets Under Audit:**
+1. `data/raw/Social_Engine_Users.csv` (1,500 user profile records)
+2. `data/raw/Social_Engine_Posts_Corrupted.csv` (12,360 post interaction records)
+**Audit Date:** 2026-09-14
 **Audit Governance:** Both original CSV files remain completely untouched and unmodified.
 
 ---
 
 ## 1. Executive Summary
 
-This forensic audit investigates the structural, syntactic, semantic, and relational integrity of both raw datasets and the foreign key relationship connecting them. 
+This forensic audit investigates the structural, syntactic, semantic, and relational integrity of both raw datasets and the foreign key relationship connecting them.
 
 ### Key Findings:
 1. **Perfect Cross-Dataset Referential Integrity:** Every single one of the 12,360 post records maps to a valid user in `Social_Engine_Users.csv`. There are **0 orphan posts** and **0 unrepresented users** (all 1,500 users have between 1 and 22 posts).
@@ -31,7 +31,7 @@ This forensic audit investigates the structural, syntactic, semantic, and relati
 
 ## 2. PART A — USERS DATASET CONFIRMATION
 
-The raw file [data/raw/Social_Engine_Users.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/raw/Social_Engine_Users.csv) was re-verified against all 13 core integrity checks:
+The raw file [data/raw/Social_Engine_Users.csv](../data/raw/Social_Engine_Users.csv) was re-verified against all 13 core integrity checks:
 
 | # | Audit Item | Verified Result | Forensic Finding |
 | :---: | :--- | :--- | :--- |
@@ -54,7 +54,7 @@ The raw file [data/raw/Social_Engine_Users.csv](file:///c:/Users/singh/OneDrive/
 
 ## 3. PART B — POSTS DATASET FORENSIC AUDIT
 
-Target File: [data/raw/Social_Engine_Posts_Corrupted.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/raw/Social_Engine_Posts_Corrupted.csv)
+Target File: [data/raw/Social_Engine_Posts_Corrupted.csv](../data/raw/Social_Engine_Posts_Corrupted.csv)
 
 ### 3.1 Dataset Structure
 - **Physical Line Count:** 12,361 lines (1 header + 12,360 data rows).
@@ -254,6 +254,6 @@ Engagement metrics are mutually independent ($r_{likes, shares} = 0.012$, $r_{li
 
 ## 7. Deliverable Verification
 
-1. **Combined Forensic Report:** [reports/03_combined_forensic_analysis.md](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/reports/03_combined_forensic_analysis.md)
-2. **Combined Forensic Notebook:** [notebooks/03_combined_forensic_analysis.ipynb](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/03_combined_forensic_analysis.ipynb)
-3. **Posts Forensic Summary CSV:** [outputs/posts_forensic_summary.csv](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/outputs/posts_forensic_summary.csv)
+1. **Combined Forensic Report:** [reports/03_combined_forensic_analysis.md](../reports/03_combined_forensic_analysis.md)
+2. **Combined Forensic Notebook:** [notebooks/03_combined_forensic_analysis.ipynb](../notebooks/03_combined_forensic_analysis.ipynb)
+3. **Posts Forensic Summary CSV:** [outputs/posts_forensic_summary.csv](../outputs/posts_forensic_summary.csv)

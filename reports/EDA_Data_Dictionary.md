@@ -1,11 +1,11 @@
 # Data Vortex — EDA Data Dictionary
 
-**Competition:** Data Vortex - Round 1  
-**Target Cleaned Datasets:**  
-1. `data/cleaned/Social_Engine_Users_Cleaned.csv` (1,500 records)  
-2. `data/cleaned/Social_Engine_Posts_Cleaned.csv` (12,000 records)  
-**Document Version:** 1.0 (Post-Cleaning Final Specification)  
-**Date:** 2026-09-14  
+**Competition:** Data Vortex - Round 1
+**Target Cleaned Datasets:**
+1. `data/cleaned/Social_Engine_Users_Cleaned.csv` (1,500 records)
+2. `data/cleaned/Social_Engine_Posts_Cleaned.csv` (12,000 records)
+**Document Version:** 1.0 (Post-Cleaning Final Specification)
+**Date:** 2026-09-14
 
 ---
 

@@ -1,12 +1,12 @@
 # Challenge 1 — Platform Interaction Benchmarks
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 01 — Platform Interaction Benchmarks  
-**Database File:** `data/data_vortex.db`  
-**Target Table:** `posts`  
-**Difficulty:** Easy  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 01 — Platform Interaction Benchmarks
+**Database File:** `data/data_vortex.db`
+**Target Table:** `posts`
+**Difficulty:** Easy
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED**
 
 ---
 
@@ -26,10 +26,10 @@ The final output is sorted by `avg_total_interactions` in descending order.
 
 ## 2. SQL Query
 
-The verified SQL query is stored in [`sql/challenge_01_platform_interaction_benchmarks.sql`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_01_platform_interaction_benchmarks.sql):
+The verified SQL query is stored in [`sql/challenge_01_platform_interaction_benchmarks.sql`](../sql/challenge_01_platform_interaction_benchmarks.sql):
 
 ```sql
-SELECT 
+SELECT
     COALESCE(platform, 'Unknown') AS platform,
     COUNT(*) AS post_count,
     ROUND(AVG(likes), 2) AS avg_likes,
@@ -82,7 +82,7 @@ Below is a beginner-friendly breakdown of each component of the SQL query:
 
 ## 4. Results
 
-Executing the query against [`data/data_vortex.db`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/data/data_vortex.db) yields the following complete result table:
+Executing the query against [`data/data_vortex.db`](../data/data_vortex.db) yields the following complete result table:
 
 ### Table 4.1: Platform Interaction Benchmarks (Primary Query Output)
 
@@ -186,4 +186,4 @@ conn.close()
 ```
 
 ### Via Jupyter Notebook:
-Open and execute all cells in [`notebooks/08_challenge_01.ipynb`](file:///C:/Users/singh/OneDrive/Documents/DATA-VORTEX/notebooks/08_challenge_01.ipynb).
+Open and execute all cells in [`notebooks/08_challenge_01.ipynb`](../notebooks/08_challenge_01.ipynb).

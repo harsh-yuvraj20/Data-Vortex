@@ -1,12 +1,12 @@
 # Challenge 7 — Audience Reach vs. Engagement
 
-**Competition:** Data Vortex — Round 1 Phase 2  
-**Challenge:** 07 — Audience Reach vs. Engagement  
-**Database File:** `data/data_vortex.db`  
-**Target Tables:** `users`, `posts`  
-**Difficulty:** Medium  
-**Date:** 2026-09-14  
-**Status:** **COMPLETED & VALIDATED**  
+**Competition:** Data Vortex — Round 1 Phase 2
+**Challenge:** 07 — Audience Reach vs. Engagement
+**Database File:** `data/data_vortex.db`
+**Target Tables:** `users`, `posts`
+**Difficulty:** Medium
+**Date:** 2026-09-14
+**Status:** **COMPLETED & VALIDATED**
 
 ---
 
@@ -43,7 +43,7 @@ $$r = \frac{N \sum XY - \sum X \sum Y}{\sqrt{\left[N \sum X^2 - (\sum X)^2\right
 - Across all 1,500 creators, 2 creators (`user_lnbrfbja` and `user_mkqbrm43`) authored posts where all `likes` were NULL.
 - Following standard statistical methodology, correlation with likes is evaluated over pairwise non-null records ($N = 1,498$), while correlation with shares and comments evaluates over the full population ($N = 1,500$).
 
-All SQL statements are maintained in [`sql/challenge_07_audience_reach_vs_engagement.sql`](file:///c:/Users/singh/OneDrive/Documents/DATA-VORTEX/sql/challenge_07_audience_reach_vs_engagement.sql).
+All SQL statements are maintained in [`sql/challenge_07_audience_reach_vs_engagement.sql`](../sql/challenge_07_audience_reach_vs_engagement.sql).
 
 ---
 
