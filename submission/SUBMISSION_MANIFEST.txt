@@ -1,0 +1,28 @@
+DATA VORTEX 2026 - ROUND 1 PHASE 2
+FINAL SUBMISSION MANIFEST
+
+1. SQL Query PDF
+   Data_Vortex_Phase2_SQL_Queries.pdf
+
+2. Output Screenshots
+   Easy_Output.jpeg
+   Medium_Output.jpeg
+   Hard_Output.jpeg
+
+3. Logic Explanation PDF
+   Data_Vortex_Phase2_Logic_Explanation.pdf
+
+4. Phase 2 Insight Report
+   Data_Vortex_Phase2_Insight_Report.pdf
+
+SELECTED QUESTIONS
+Easy: E2 - Most Engaged Posts
+Medium: M1 - Which Locations Generate the Most Engagement?
+Hard: H2 - Rank Users Within Their Location
+
+DATABASE USED:
+data/data_vortex.db
+
+VALIDATION:
+All three SQL queries executed successfully against the project database.
+The database was opened in read-only mode for this analysis.
