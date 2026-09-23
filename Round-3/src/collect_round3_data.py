@@ -11,6 +11,7 @@ from pathlib import Path
 import requests, pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / 'data' / 'raw'
+PROCESSED = ROOT / 'data' / 'processed'
 
 def clean_html(value: object) -> str:
     s = html.unescape(str(value or ''))
@@ -68,7 +69,7 @@ def collect() -> pd.DataFrame:
     df = df.dropna(subset=['timestamp']).drop_duplicates(subset=['id']).sort_values('timestamp').reset_index(drop=True)
     df['date'] = df.timestamp.dt.date.astype(str)
     save_csv(df, RAW/'hn_recommendation_algorithm_reactions_raw.csv')
-    save_csv(df, ROOT/'data'/'round3_recommendation_algorithm_reactions.csv')
+    save_csv(df, PROCESSED / 'round3_recommendation_algorithm_reactions.csv')
     (RAW/'collection_metadata.json').write_text(json.dumps({'collection_start_timestamp': started.isoformat(), 'collection_end_timestamp': datetime.now(timezone.utc).isoformat(), 'timezone': 'UTC', 'source': 'Hacker News public Algolia archive API', 'endpoint': API, 'query_terms': QUERIES, 'records_after_topic_screen_and_deduplication': int(len(df)), 'failed_queries': failures, 'access_notes': 'Reddit and Bluesky public endpoints returned HTTP 403 from this environment on 2026-09-22; no bypass attempted.'}, indent=2), encoding='utf-8')
     return df
 

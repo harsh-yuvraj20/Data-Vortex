@@ -13,7 +13,7 @@ from analyze_sentiment import predict_sentiment
 from analyze_activity import activity_analysis
 from analyze_topics import topic_analysis
 from detect_shifts import detect_shifts
-from utils import ROOT, RESULTS, FIGURES, save_csv
+from utils import ROOT, RESULTS, FIGURES, PROCESSED, save_csv
 
 def graph(df, activity, topics, entities, evo, shifts, spikes):
     plt.style.use('seaborn-v0_8-whitegrid')
@@ -80,6 +80,6 @@ def main():
                 r=hit.iloc[0]; evidence.append({'event_id':event_id,'event_description':description,'source_name':'Hacker News','article_or_post_title':r.title,'publication_timestamp':r.timestamp,'url':r.url,'reason_relevant':'Collected contemporaneous evidence record; supports temporal coincidence only.'})
     save_csv(pd.DataFrame(evidence),RESULTS/'trigger_evidence.csv')
     graph(df,activity,topics,entities,evo,shifts,spikes); make_reports(df,activity,topics,entities,shifts,spikes)
-    save_csv(df,ROOT/'data'/'round3_recommendation_algorithm_reactions.csv')
+    save_csv(df,PROCESSED/'round3_recommendation_algorithm_reactions.csv')
     print(json.dumps({'records':len(df),'window':[str(df.timestamp.min()),str(df.timestamp.max())],'sentiment':df.predicted_sentiment.value_counts().to_dict(),'shifts':len(shifts),'spikes':len(spikes)},indent=2))
 if __name__=='__main__': main()

@@ -21,7 +21,7 @@ The forensic notebooks and reports record the inspection, corruption analysis, c
 ## Reproduce
 
 ```powershell
-python -m pip install -r requirements.txt
+python -m pip install pandas numpy matplotlib
 python src/clean_data.py
 ```
 

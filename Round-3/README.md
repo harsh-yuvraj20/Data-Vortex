@@ -6,7 +6,7 @@ Analyze public reaction to changes in recommendation algorithms using genuine pu
 
 ## Data and methodology
 
-`data/raw/` preserves the collection export and its metadata. `data/round3_recommendation_algorithm_reactions.csv` is the final 204-record structured dataset used for the corrected analysis. The source modules document collection, preprocessing, sentiment analysis, activity analysis, topic/entity analysis, and descriptive shift detection.
+`data/raw/` preserves the collection export and its metadata. `data/processed/round3_recommendation_algorithm_reactions.csv` is the final 204-record structured dataset used for the corrected analysis. The source modules document collection, preprocessing, sentiment analysis, activity analysis, topic/entity analysis, and descriptive shift detection.
 
 ## Round 2 model dependency
 
@@ -14,7 +14,7 @@ Round 3 loads the canonical, unchanged sentiment pipeline at `../Round-2/models/
 
 ## Final deliverables
 
-- Final dataset: `data/round3_recommendation_algorithm_reactions.csv`
+- Final dataset: `data/processed/round3_recommendation_algorithm_reactions.csv`
 - Provenance archive: `data/raw/`
 - Collection and analysis source: `src/`
 - Executed analysis notebook: `notebooks/Round3_Real_Time_Analysis.ipynb`

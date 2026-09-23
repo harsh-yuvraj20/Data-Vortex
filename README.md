@@ -37,8 +37,6 @@ DATA-VORTEX/
 │       ├── src/
 │       │   ├── load_sqlite.py                # Automated database ingestion from cleaned data
 │       │   └── build_phase2_submission.py    # Authoritative submission and report generator
-│       ├── reports/
-│       │   └── 07_database_setup.md          # Database setup and schema documentation
 │       ├── submission/                       # Upload-ready submission package
 │       │   ├── Data_Vortex_Phase2_SQL_Queries.pdf
 │       │   ├── Easy_Output.jpeg
@@ -71,7 +69,8 @@ DATA-VORTEX/
     │   ├── raw/
     │   │   ├── collection_metadata.json      # Provenance metadata and query terms
     │   │   └── hn_recommendation_algorithm_reactions_raw.csv
-    │   └── round3_recommendation_algorithm_reactions.csv # 204 final retained analytical records
+    │   └── processed/
+    │       └── round3_recommendation_algorithm_reactions.csv # 204 final retained analytical records
     ├── src/                                  # Ingestion, preprocessing, and analytical modules
     ├── notebooks/
     │   └── Round3_Real_Time_Analysis.ipynb   # Executed analysis notebook with visualizations

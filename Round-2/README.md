@@ -14,7 +14,6 @@ Build reproducible NLP classifiers for the supplied labelled social-post dataset
 - Final trained pipelines: `models/sentiment_label_pipeline.pkl`, `models/topic_category_pipeline.pkl`
 - Evaluation report: `reports/Round2_Evaluation_Metrics.pdf`
 - Technical report: `reports/Round2_Technical_Report.pdf`
-- Submission artifact manifest: `SUBMISSION_MANIFEST.txt`
 
 The two model files are unchanged final artifacts. Round 3 directly uses the canonical sentiment pipeline; it does not keep a duplicate model copy.
 

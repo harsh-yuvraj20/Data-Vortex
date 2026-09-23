@@ -23,7 +23,7 @@ Use the validated SQLite Social Engine database for the final selected SQL chall
 ## Reproduce
 
 ```powershell
-python -m pip install -r ../Phase-1/requirements.txt
+python -m pip install pandas Pillow reportlab
 python src/load_sqlite.py
 python src/build_phase2_submission.py
 ```
