@@ -1,0 +1,9 @@
+pandas>=2.2
+numpy>=2.0
+scikit-learn>=1.5
+joblib>=1.4
+requests>=2.32
+matplotlib>=3.9
+reportlab>=4.2
+nbformat>=5.10
+nbclient>=0.10

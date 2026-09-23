@@ -1,0 +1,20 @@
+{
+  "collection_start_timestamp": "2026-09-21T19:44:34.808161+00:00",
+  "collection_end_timestamp": "2026-09-21T19:44:49.802497+00:00",
+  "timezone": "UTC",
+  "source": "Hacker News public Algolia archive API",
+  "endpoint": "https://hn.algolia.com/api/v1/search",
+  "query_terms": [
+    "Twitter recommendation algorithm",
+    "YouTube recommendation algorithm",
+    "Instagram algorithm change",
+    "feed algorithm",
+    "recommendation algorithm",
+    "recommendation ranking",
+    "Facebook news feed algorithm",
+    "algorithmic feed"
+  ],
+  "records_after_topic_screen_and_deduplication": 389,
+  "failed_queries": [],
+  "access_notes": "Reddit and Bluesky public endpoints returned HTTP 403 from this environment on 2026-09-22; no bypass attempted."
+}

@@ -2,83 +2,32 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-
-# Jupyter Notebook checkpoints
+# Caches and runtime metadata
 .ipynb_checkpoints/
-*-checkpoint.ipynb
+.ipython/
+.matplotlib/
+.jupyter_runtime/
 
-# Environments & Virtual Environments
-.env
-.venv
-env/
+# Environments and secrets
+.venv/
 venv/
-ENV/
-env.bak/
-venv.bak/
+env/
+.env
 
-# IDE & Editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS generated files
+# Operating System files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Temporary files & logs
+# Temporary files and editor metadata
 *.log
 *.tmp
-
-# Competition Submission Rule:
-# DO NOT ignore datasets, database, reports, or project deliverables
-!data/raw/*
-!data/cleaned/*
-!data/data_vortex.db
-!reports/*
-!reports/*.pdf
-!outputs/figures/*
-!outputs/screenshots/*
-!outputs/*.csv
-!sql/*
-!src/*
-!notebooks/*
+*.bak
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+powershell.cmd
