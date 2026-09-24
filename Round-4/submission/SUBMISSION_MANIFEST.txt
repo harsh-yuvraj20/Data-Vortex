@@ -1,0 +1,37 @@
+DATA VORTEX 2026 — ROUND 4
+FINAL SUBMISSION MANIFEST
+
+ROUND 4: SOCIAL ENGINE REVIVAL
+Integrated Interactive Social Engine Dashboard & Synthesis
+
+SUBMISSION DELIVERABLES:
+1. Technical & Methodology Report
+   Round4_Technical_Report.pdf
+   - Architecture, multi-round data integration, and pipeline validation.
+
+2. Analytical Findings Report
+   Round4_Analytical_Report.pdf
+   - Cross-round evidence matrix, empirical findings, and limitations.
+
+3. Dashboard User Guide & Documentation
+   Round4_Dashboard_Documentation.pdf
+   - Streamlit + Plotly architecture, information architecture, and run instructions.
+
+4. Executed Submission Notebook
+   Round4_Social_Engine_Revival.ipynb
+   - Top-to-bottom reproducible execution demonstrating data audit, SQL queries, NLP inference, and social signals.
+
+CANONICAL DATA & MODEL DEPENDENCIES (REFERENCED, NOT DUPLICATED):
+- Round 1 Posts: Round-1/Phase-1/data/cleaned/Social_Engine_Posts_Cleaned.csv (12,000 rows)
+- Round 1 Users: Round-1/Phase-1/data/cleaned/Social_Engine_Users_Cleaned.csv (1,500 rows)
+- Round 1 Database: Round-1/Phase-2/data/data_vortex.db (read-only mode)
+- Round 2 Training: Round-2/data/Labeled_Social_NLP_Training_Data.csv (9,000 rows)
+- Round 2 Sentiment Model: Round-2/models/sentiment_label_pipeline.pkl
+- Round 2 Topic Model: Round-2/models/topic_category_pipeline.pkl
+- Round 3 Processed Reactions: Round-3/data/processed/round3_recommendation_algorithm_reactions.csv (204 rows)
+
+VERIFICATION SUMMARY:
+- All PDFs verified (< 10 MB, valid %PDF header).
+- Notebook executed top-to-bottom with code 0.
+- All numbers cross-checked and identical across reports, notebook, and dashboard.
+- Zero Git write operations performed.

@@ -1,0 +1,3 @@
+id,period,prev_index,next_index,delta,sample_size,primary_topic,finding
+SS1,September 2025 → October 2025,-0.2,-1.0,-0.8,5 posts (Sep) → 3 posts (Oct),European AI Act / Algorithm Compliance,Net sentiment dropped by -0.8000 following European AI/profiling compliance discussions. Causality is disclaimed due to low monthly archive volume.
+SS2,October 2024 → November 2024,-1.0,-0.2,0.8,4 posts (Oct) → 5 posts (Nov),Recommendation Algorithm Source Code / Open Source,Sharp positive sentiment rebound (+0.8000) from unanimous negative sentiment. Corresponds to technical discussions of recommendation algorithm architectures.

@@ -1,0 +1,100 @@
+location,engagement_rank,user_id,follower_count,post_count,total_engagement
+"Barcelona, Spain",1,user_nfo3ih5u,40429,17,69109
+"Barcelona, Spain",2,user_5s9ifp0y,28412,10,55663
+"Barcelona, Spain",3,user_24wzfb8b,38633,12,49741
+"Beijing, China",1,user_cdzp4vm2,11187,11,48019
+"Beijing, China",2,user_ttlouvlq,19373,11,45695
+"Beijing, China",3,user_gre0h06x,23303,10,43719
+"Berlin, Germany",1,user_6e99lerx,25366,13,52982
+"Berlin, Germany",2,user_rtp2dykx,14113,11,52748
+"Berlin, Germany",3,user_m5z8a3sg,34800,11,50121
+"Cairo, Egypt",1,user_g37hrbp3,6699,10,50320
+"Cairo, Egypt",2,user_cuzig14g,8070,12,48076
+"Cairo, Egypt",3,user_ogtvuuki,4459,8,41183
+"Chicago, USA",1,user_ujllj1n7,49855,13,59050
+"Chicago, USA",2,user_pr7bcf45,30128,13,57393
+"Chicago, USA",3,user_u98jwp3f,49936,10,46083
+"Delhi, India",1,user_zq2nib62,5153,12,51134
+"Delhi, India",2,user_8776jund,21147,10,48425
+"Delhi, India",3,user_yu2w96i5,9772,13,45589
+"Dubai, UAE",1,user_xetn4exw,14902,15,57883
+"Dubai, UAE",2,user_wyeb78qv,24634,16,55214
+"Dubai, UAE",3,user_rsrg2sgy,32791,11,54042
+"Houston, USA",1,user_r7eg1rac,2052,12,54552
+"Houston, USA",2,user_68enpikx,9364,11,50580
+"Houston, USA",3,user_44h4xl31,48691,10,45515
+"Johannesburg, South Africa",1,user_9mtets0p,8262,14,62414
+"Johannesburg, South Africa",2,user_6wra58f7,4953,13,53587
+"Johannesburg, South Africa",3,user_cefi5hpb,15895,10,48454
+"Lagos, Nigeria",1,user_slqlepta,40296,13,57975
+"Lagos, Nigeria",2,user_jnknxe13,35496,12,43962
+"Lagos, Nigeria",3,user_sk29dqyu,18327,11,42902
+"London, UK",1,user_634lriof,12327,12,60436
+"London, UK",2,user_94hehp26,33258,13,59706
+"London, UK",3,user_3jxx3h3w,35570,12,50074
+"Los Angeles, USA",1,user_3zzvv8vp,42908,13,59221
+"Los Angeles, USA",2,user_8wk0j5ae,36943,16,58745
+"Los Angeles, USA",3,user_wcqtxwgr,10281,11,51432
+"Lyon, France",1,user_fgjkkrie,2211,14,62690
+"Lyon, France",2,user_2lslaaod,7105,7,36315
+"Lyon, France",3,user_ta69gmj0,21267,11,35427
+"Madrid, Spain",1,user_v4objqex,16772,11,47252
+"Madrid, Spain",2,user_edi9lmxp,22782,12,46818
+"Madrid, Spain",3,user_w4p8zi5g,7103,11,44392
+"Manchester, UK",1,user_oknxkzax,34257,13,57292
+"Manchester, UK",2,user_q3vs0uj7,32714,14,51798
+"Manchester, UK",3,user_ouggehu2,29402,10,43732
+"Melbourne, Australia",1,user_d6tjszz8,37186,14,58020
+"Melbourne, Australia",2,user_qdztdeac,14266,11,55609
+"Melbourne, Australia",3,user_mtuzxdlb,49341,12,51825
+"Mexico City, Mexico",1,user_716l1rz5,41236,12,54592
+"Mexico City, Mexico",2,user_s87enj6b,43476,11,53403
+"Mexico City, Mexico",3,user_cyqqg8x5,44679,11,47637
+"Milan, Italy",1,user_xa1s1sd5,37758,12,51002
+"Milan, Italy",2,user_rr1uzkql,1069,12,46912
+"Milan, Italy",3,user_t59clgrj,43441,10,43406
+"Mumbai, India",1,user_2ytzut7i,17064,13,63888
+"Mumbai, India",2,user_y9bjiho1,24858,13,61956
+"Mumbai, India",3,user_gq0rypar,17672,13,60450
+"Munich, Germany",1,user_al9p1gnu,49268,11,52575
+"Munich, Germany",2,user_g9g7onlw,7981,11,48735
+"Munich, Germany",3,user_58rc29a2,29379,11,44526
+"New York, USA",1,user_wr2785sn,12713,11,53050
+"New York, USA",2,user_kk1qdsq3,32189,11,47175
+"New York, USA",3,user_tlwy34pg,24453,9,46737
+"Osaka, Japan",1,user_yr80oaxg,30039,11,49062
+"Osaka, Japan",2,user_c66o14p3,24996,10,47727
+"Osaka, Japan",3,user_5r58l1kr,23520,9,45641
+"Paris, France",1,user_kf84zwv2,49575,12,51150
+"Paris, France",2,user_45yefmlp,37589,10,47846
+"Paris, France",3,user_4snqim59,20152,11,41990
+"Rio de Janeiro, Brazil",1,user_hdas0iau,1620,14,55118
+"Rio de Janeiro, Brazil",2,user_aroc3ncd,10428,12,54206
+"Rio de Janeiro, Brazil",3,user_31qdm3s9,33635,11,52060
+"Rome, Italy",1,user_uerv85na,1824,13,58861
+"Rome, Italy",2,user_0aacyvtz,1452,10,44667
+"Rome, Italy",3,user_txrypced,2479,10,42896
+"Seoul, South Korea",1,user_ceim4vux,40811,12,45157
+"Seoul, South Korea",2,user_tmjtxubu,48104,10,44602
+"Seoul, South Korea",3,user_ivpoy0x1,28950,11,43343
+"Shanghai, China",1,user_zyptgxi8,47455,11,51627
+"Shanghai, China",2,user_xn2a0g8z,45029,10,44370
+"Shanghai, China",3,user_qq52pl85,23934,10,44009
+Singapore,1,user_14ibkds2,7361,13,57044
+Singapore,2,user_v469etxv,23469,11,44636
+Singapore,3,user_nudota2x,17212,11,44092
+"Sydney, Australia",1,user_bnswpe65,20002,14,54984
+"Sydney, Australia",2,user_h4lueh1i,17902,9,43948
+"Sydney, Australia",3,user_kiebkz7i,34969,9,39205
+"São Paulo, Brazil",1,user_0snf4coc,42927,14,54457
+"São Paulo, Brazil",2,user_8bcte4x2,46936,12,51993
+"São Paulo, Brazil",3,user_e9paascb,19695,14,48463
+"Tokyo, Japan",1,user_d4eat3v3,49914,14,62588
+"Tokyo, Japan",2,user_kbdvf8d6,4645,10,48490
+"Tokyo, Japan",3,user_csluibwk,19091,11,48358
+"Toronto, Canada",1,user_0irp4abu,44206,14,64133
+"Toronto, Canada",2,user_cpxksz4r,49247,12,49658
+"Toronto, Canada",3,user_ukkkyp0o,28045,9,42441
+"Vancouver, Canada",1,user_zqv2vrf5,13531,19,81326
+"Vancouver, Canada",2,user_i1e1kek5,46765,15,61112
+"Vancouver, Canada",3,user_lk8wtuqr,32276,14,51577

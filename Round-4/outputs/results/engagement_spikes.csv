@@ -1,0 +1,4 @@
+id,date,observed_score,baseline_mean,ratio,title,sentiment,topic
+ES1,2023-03-31,1704.0,6.0,284.0,Twitter's Recommendation Algorithm,Negative,Algorithm_Release / Open_Source
+ES2,2026-02-15,338.0,6.0,56.3,NewPipe: YouTube client without vertical videos and algorithmic feed,Negative,Feed_Control / Client_Alternatives
+ES3,2025-09-09,265.0,6.0,44.2,Source code for the X recommendation algorithm,Positive,Algorithm_Source / Technical_Audit

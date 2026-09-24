@@ -1,0 +1,7 @@
+Round,Domain,Authoritative Artifact,Verified Metric,Validation Status
+Round 1 Phase 1,Forensic EDA,Social_Engine_Posts_Cleaned.csv,"12,000 posts / 1,500 users",PASS
+Round 1 Phase 2,SQLite Database,data_vortex.db,"13,500 records (Integrity: OK)",PASS
+Round 2,Sentiment Model,sentiment_label_pipeline.pkl,Accuracy: 0.5786 | Macro F1: 0.5795,PASS
+Round 2,Topic Model,topic_category_pipeline.pkl,Accuracy: 0.9264 | Weighted F1: 0.9110,PASS
+Round 3,Temporal Mining,round3_recommendation_algorithm_reactions.csv,204 items (Window: 2011–2026),PASS
+Round 4,Unified App,app.py,Streamlit 5-page modular architecture,PASS
